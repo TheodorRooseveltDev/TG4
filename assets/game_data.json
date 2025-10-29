@@ -1,0 +1,3758 @@
+{
+  "game_info": {
+    "title": "Casino Clash: Trail of Chances",
+    "version": "1.0",
+    "type": "visual_novel_casino",
+    "year": "1800",
+    "total_casinos": 10
+  },
+  "player_initial": {
+    "name": "",
+    "money": 50,
+    "respect": 0,
+    "tokens": [],
+    "current_screen": "intro_1"
+  },
+  "screens_part1": {
+    "intro_1": {
+      "type": "narration",
+      "bg": "assets/images/prologue/intro_1.png",
+      "music": "storm.mp3",
+      "text": "Your eyes flutter open. Cold metal beneath you. The acrid smell of coal and steam. You're lying on a train station platform, staring up at the dark sky. Your head pounds. Your memories... they're gone. Who are you? How did you get here?",
+      "auto_continue": 3,
+      "next": "intro_2"
+    },
+    "intro_2": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/intro_2.png",
+      "character": "???",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "friendly",
+      "dialogue": "Well, well... look who finally decided to wake up. You've been out for hours, stranger. Easy now, you hit your head pretty hard when you arrived. Do you remember anything? Your name, perhaps?",
+      "next": "name_question"
+    },
+    "name_question": {
+      "type": "name_input",
+      "bg": "assets/images/prologue/intro_2.png",
+      "character": "???",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "friendly",
+      "dialogue": "Nothing? Well then, let's start simple. What should I call you?",
+      "next": "intro_3"
+    },
+    "intro_3": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "scarlett",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "friendly",
+      "dialogue": "[PLAYER_NAME]... I like it. Has a certain ring to it. The name's Scarlett. Scarlett Rose. Welcome to Perdition Station. Behind us, ten casinos await - each one holding its own secrets and opportunities. Something tells me you didn't end up here by accident. Welcome aboard, [PLAYER_NAME]. Let's see what fate has in store for you.",
+      "next": "scarlett_casino_1_intro"
+    },
+    "scarlett_casino_1_intro": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "scarlett",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "friendly",
+      "dialogue": "So you're heading into The Dusty Dollar first. Smart choice, [PLAYER_NAME]. Old Moses runs that place - he's... complicated. Five versions of himself, all dealing cards at once. Time works differently in there, so don't be surprised if you see things that haven't happened yet. Or already happened. Or never will. You'll understand when you see it.",
+      "next": "scarlett_casino_1_warning"
+    },
+    "scarlett_casino_1_warning": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "scarlett",
+      "character_image": "assets/images/characters/scarlett/beer.png",
+      "emotion": "serious",
+      "dialogue": "One more thing - the mirrors in there don't lie, but they don't tell the truth either. They show what was, what is, and what could be, all at once. Don't stare too long, or you'll get lost in them. And [PLAYER_NAME]... trust the cards, not your eyes. Good luck in there.",
+      "next": "casino_1_enter"
+    },
+    "casino_1_enter": {
+      "type": "narration",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "text": "Casino 1: The Dusty Dollar. The Museum of What Was. Built on a mass grave, where every mirror shows the past and everyone's past is bloody.",
+      "next": "moses_introduction"
+    },
+    "moses_introduction": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "text": "At the center table sits OLD MOOSE. But he's not alone. Around him sit five versions of himself across time.",
+      "narration": "Each Moose deals from a different deck. Each Moose lived a different life. All speak in eerie harmony.",
+      "next": "moses_1"
+    },
+    "moses_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "normal",
+      "dialogue": "Welcome to the Museum of What Was. Your mother died here. She also lived here. She was born here. She never existed here. All truths are true in the Dollar.",
+      "choices": [
+        {
+          "text": "Which Moses are you really?",
+          "next": "moses_2a",
+          "effects": {
+            "emotion": "normal",
+            "respect": 10
+          }
+        },
+        {
+          "text": "Show me my mother's death.",
+          "next": "moses_2b",
+          "effects": {
+            "emotion": "sad",
+            "respect": 15
+          }
+        },
+        {
+          "text": "I want to see MY past.",
+          "next": "moses_2c",
+          "effects": {
+            "emotion": "normal",
+            "respect": 5
+          }
+        },
+        {
+          "text": "Deal the cards, all of you.",
+          "next": "moses_2d",
+          "effects": {
+            "emotion": "normal",
+            "respect": 20
+          }
+        }
+      ]
+    },
+    "moses_2a": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "normal",
+      "dialogue": "I am all of me. The enslaved boy with fresh scars. The child still innocent. The dead man still dealing. The version that never was. The Moses yet to be. We exist simultaneously.",
+      "next": "moses_2a_continue"
+    },
+    "moses_2a_continue": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "interested",
+      "dialogue": "You ask the right question. Identity. The slave boy version deals first\u2014he plays honest, fair. The dead version cheats. The innocent one doesn't understand the rules. Which Moses will YOU trust at the table?",
+      "next": "moses_game_intro"
+    },
+    "moses_2b": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "sad",
+      "dialogue": "Your mother's death? Look at table three. She's playing cards right now, alone in shadow. She's dead but also living. Death isn't final in Perdition\u2014it's a state of mind.",
+      "next": "moses_2b_mother"
+    },
+    "moses_2b_mother": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You walk to table three. The woman turns. It IS your mother\u2014but her eyes are empty voids. She mouths words but no sound comes. Her cards show the same hand repeating: Death, Death, Death, Death.",
+      "narration": "Moses whispers: 'She's trapped in the moment of her murder. Playing the same hand forever. You could join her game... or play mine instead.'",
+      "next": "moses_game_intro"
+    },
+    "moses_2c": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "normal",
+      "dialogue": "Your past? The mirrors here don't reflect the present. Look around you\u2014every reflection shows a different version of your childhood. In some, your mother lives. In others, you never existed.",
+      "next": "moses_2c_mirrors"
+    },
+    "moses_2c_mirrors": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You see yourself in the mirrors: A child laughing with both parents. A teenager alone. An infant that never drew breath. A version where YOU killed her. All equally real. All happening now.",
+      "narration": "Moses: 'Your past isn't fixed. Every choice you make rewrites it. At my table, you'll bet on which past becomes TRUE. Ready?'",
+      "next": "moses_game_intro"
+    },
+    "moses_2d": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "happy",
+      "dialogue": "Acceptance. Good. You understand that questioning reality in Perdition is pointless. All versions are true. Let us play.",
+      "next": "moses_2d_wisdom"
+    },
+    "moses_2d_wisdom": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "happy",
+      "dialogue": "You're wiser than most who enter here. They waste time fighting paradox. You embrace it. That wisdom will serve you at the table. Or doom you. Let's find out.",
+      "next": "moses_game_intro"
+    },
+    "moses_game_intro": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "interested",
+      "dialogue": "Five versions of me. Five hands of cards. You must choose which version to trust. Choose wrong, and you'll see futures that never were. Choose right, and you'll see the truth about Sarah Chance's murder. The buy-in is $10. Do you accept?",
+      "next": "moses_bet_check"
+    },
+    "moses_bet_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "money >= 10",
+          "next": "moses_bet_choice_full"
+        },
+        {
+          "condition": "money < 10",
+          "next": "moses_bet_choice_poor"
+        }
+      ]
+    },
+    "moses_bet_choice_full": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "interested",
+      "dialogue": "What will you wager?",
+      "choices": [
+        {
+          "text": "I accept. Deal the cards. ($10)",
+          "next": "moses_hand_1",
+          "effects": {
+            "money": -10,
+            "respect": 10
+          }
+        },
+        {
+          "text": "No. I won't play your time games.",
+          "next": "moses_refuse",
+          "effects": {
+            "respect": -20
+          }
+        },
+        {
+          "text": "I'll bet my memories instead.",
+          "next": "moses_memory_bet",
+          "effects": {
+            "sanity": -10,
+            "respect": 25
+          }
+        }
+      ]
+    },
+    "moses_bet_choice_poor": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/sad.png",
+      "emotion": "sad",
+      "dialogue": "You're broke. You don't have $10. But that's alright\u2014in Perdition, memories are worth more than money anyway. Bet your memories, or walk away.",
+      "choices": [
+        {
+          "text": "I'll bet my memories. Deal the cards.",
+          "next": "moses_memory_bet",
+          "effects": {
+            "sanity": -10,
+            "respect": 25
+          }
+        },
+        {
+          "text": "No. I won't play your time games.",
+          "next": "moses_refuse",
+          "effects": {
+            "respect": -20
+          }
+        }
+      ]
+    },
+    "moses_refuse": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "sad",
+      "dialogue": "Then you learn nothing. The Museum keeps its secrets. Leave, child. Return when you're ready to face the truth.",
+      "effects": {
+        "respect": -10
+      },
+      "next": "casino_1_incomplete"
+    },
+    "casino_1_incomplete": {
+      "type": "narration",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You leave The Dusty Dollar empty-handed. The mirrors show you walking away seventeen times. Moose's laughter echoes across timelines. You'll need to return to complete this casino.",
+      "next": "map_return"
+    },
+    "moses_memory_bet": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "happy",
+      "dialogue": "Memories... now that's a true gambler's currency. I accept. Win, and you keep your memories plus gain mine. Lose, and I take your happiest memory. You won't even remember losing it.",
+      "next": "moses_memory_warning"
+    },
+    "moses_memory_warning": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "As you sit, reality flickers. You suddenly can't remember your mother's face clearly. Was she blonde? Brunette? Did she even exist?",
+      "narration": "Moses grins: 'The bet is already placed. Your memories are the ante. Now let's see if you win them back...'",
+      "next": "moses_hand_1"
+    },
+    "moses_hand_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "normal",
+      "dialogue": "HAND ONE: The five of me deal. Young Moose shows you three aces. Dead Moose shows you two kings. Child Moose shows you a royal flush. The Moose that never was shows you empty hands. Future Moose shows you cards that haven't been printed yet. Which hand is real?",
+      "choices": [
+        {
+          "text": "Trust Young Moose - three aces.",
+          "next": "moses_hand_2",
+          "effects": {
+            "respect": 5,
+            "money": 5
+          }
+        },
+        {
+          "text": "Trust Dead Moose - two kings.",
+          "next": "moses_hand_2_wrong",
+          "effects": {
+            "money": -5,
+            "sanity": -5
+          }
+        },
+        {
+          "text": "Trust Child Moose - royal flush.",
+          "next": "moses_hand_2",
+          "effects": {
+            "respect": 10,
+            "money": 10
+          }
+        },
+        {
+          "text": "Trust the empty hands - nothing is real.",
+          "next": "moses_hand_2_truth",
+          "effects": {
+            "respect": 20,
+            "truthLevel": 10,
+            "money": 15
+          }
+        }
+      ]
+    },
+    "moses_hand_2_wrong": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "sad",
+      "dialogue": "You chose poorly. Dead Moose deals only death. Your vision blurs - you see yourself dying seventeen different ways. But the game continues. You're not done yet.",
+      "next": "moses_hand_2"
+    },
+    "moses_hand_2_truth": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "happy",
+      "dialogue": "Ah! You understand! The only truth in The Dusty Dollar is that nothing is true. All hands are lies, even the winning ones. This wisdom will serve you well, [PLAYER_NAME].",
+      "next": "moses_hand_2"
+    },
+    "moses_hand_2": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "normal",
+      "dialogue": "HAND TWO: The mirrors behind me show your mother. In one mirror, she's alive and playing cards. In another, she's dead on the floor. In a third, she never existed. In the fourth, she IS the cards. Which mirror shows the truth?",
+      "choices": [
+        {
+          "text": "The mirror where she's alive.",
+          "next": "moses_hand_3",
+          "effects": {
+            "sanity": 5
+          }
+        },
+        {
+          "text": "The mirror where she's dead.",
+          "next": "moses_hand_3",
+          "effects": {
+            "sanity": -5,
+            "respect": 5
+          }
+        },
+        {
+          "text": "All mirrors show truth. Time is simultaneous.",
+          "next": "moses_hand_3_wisdom",
+          "effects": {
+            "respect": 15,
+            "truthLevel": 15,
+            "sanity": -10
+          }
+        },
+        {
+          "text": "I refuse to look. These are tricks.",
+          "next": "moses_hand_3",
+          "effects": {
+            "respect": 10
+          }
+        }
+      ]
+    },
+    "moses_hand_3_wisdom": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "interested",
+      "dialogue": "YES! You're learning. Your mother exists in all states at once. Dead, alive, never-born, transformed. This is the quantum nature of Perdition. Your sanity cracks, but your understanding grows.",
+      "next": "moses_hand_3"
+    },
+    "moses_hand_3": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "sad",
+      "dialogue": "FINAL HAND: I'll tell you the truth about Sarah Chance. But first, you must bet something precious. Your sanity, your money, or your respect in Perdition. Choose wisely - this determines what you learn.",
+      "choices": [
+        {
+          "text": "Bet my sanity. I need the raw truth.",
+          "next": "moses_truth_sanity",
+          "effects": {
+            "sanity": -20,
+            "truthLevel": 30,
+            "money": 25
+          }
+        },
+        {
+          "text": "Bet my money ($20). I'll buy the truth.",
+          "next": "moses_truth_money",
+          "effects": {
+            "money": -20,
+            "truthLevel": 20,
+            "respect": 10
+          }
+        },
+        {
+          "text": "Bet my respect. Let them hate me.",
+          "next": "moses_truth_respect",
+          "effects": {
+            "respect": -30,
+            "truthLevel": 25,
+            "money": 30
+          }
+        },
+        {
+          "text": "I bet nothing. I'll find the truth myself.",
+          "next": "moses_walk_away",
+          "effects": {
+            "respect": 20,
+            "money": 10
+          }
+        }
+      ]
+    },
+    "moses_truth_sanity": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "text": "You bet your sanity. Moose reveals the truth: 'Sarah Chance killed herself. But also didn't. She was murdered by her future self. And by Scarlett. And by you. All timelines converge here. The killer is everyone and no one.'",
+      "narration": "Your mind fractures. You see seventeen versions of the murder happening simultaneously. You understand everything and nothing. The raw truth burns through your consciousness.",
+      "next": "moses_completion"
+    },
+    "moses_truth_money": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "normal",
+      "dialogue": "You pay in gold. I give you facts: Sarah Chance was shot three times. Once in 1873, once in 1899, once in 1923. Same woman, same wound, three different moments. The shooter had seventeen faces, all familiar. That's all money can buy.",
+      "next": "moses_completion"
+    },
+    "moses_truth_respect": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "interested",
+      "dialogue": "You sacrifice your reputation. Bold. Here's what that buys: The killer is someone you trust. Someone you'll meet in the next casino. Someone wearing seventeen masks. But I won't say who. That's for you to discover.",
+      "next": "moses_completion"
+    },
+    "moses_walk_away": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/happy.png",
+      "emotion": "happy",
+      "dialogue": "Refusing to pay... I respect that. Here's a free truth: The answers aren't in my casino. They're in the next one. And the next. And the one after that. The trail is long, [PLAYER_NAME]. But you've earned my respect.",
+      "next": "moses_completion"
+    },
+    "moses_completion": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MOOSE",
+      "character_image": "assets/images/characters/moose/normal.png",
+      "emotion": "normal",
+      "dialogue": "You've survived The Dusty Dollar. Take this copper token - proof you've beaten my casino. And take this journal - your mother's first entry, written in her own blood. The Broken Spoke awaits you now.",
+      "effects": {
+        "money": 40,
+        "respect": 25
+      },
+      "next": "casino_1_complete"
+    },
+    "casino_1_complete": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You pocket the copper token. The weight of it feels wrong - like it's heavier in some timelines than others. Moose nods at all of you - past, present, and future.",
+      "narration": "As you turn to leave, you catch your reflection in seventeen mirrors. In each one, you're holding a different weapon. In each one, your mother's killer looks back at you.",
+      "effects": {
+        "tokensCollected": [
+          "copper_token"
+        ]
+      },
+      "next": "map_return"
+    },
+    "map_return": {
+      "type": "system",
+      "action": "return_to_map",
+      "unlock": "casino_2"
+    },
+    "sheriff_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Well, well. Fresh meat at The Broken Spoke. I'm Sheriff McCal ister. This here's MY territory, and every soul that walks through that door owes me a tax. You got the copper token from Moose's casino, I see.",
+      "narration": "The Sheriff's eyes are cold, calculating. His hand rests casually on his revolver. The other patrons avoid looking at your table.",
+      "next": "sheriff_respect_check"
+    },
+    "sheriff_respect_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "respect < 10",
+          "next": "sheriff_disrespect_1"
+        },
+        {
+          "condition": "respect >= 10 && respect < 30",
+          "next": "sheriff_neutral_1"
+        },
+        {
+          "condition": "respect >= 30",
+          "next": "sheriff_respect_1"
+        }
+      ]
+    },
+    "sheriff_disrespect_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/angry.png",
+      "emotion": "angry",
+      "dialogue": "I asked around about you. Nobody knows your name. Nobody respects you. In this town, that makes you... disposable. Maybe I should just save everyone the trouble.",
+      "narration": "His hand moves to his gun. The room goes deadly quiet. You have seconds to respond.",
+      "next": "sheriff_disrespect_check"
+    },
+    "sheriff_disrespect_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "money >= 20",
+          "next": "sheriff_disrespect_choices_full"
+        },
+        {
+          "condition": "money < 20",
+          "next": "sheriff_disrespect_choices_poor"
+        }
+      ]
+    },
+    "sheriff_disrespect_choices_full": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/angry.png",
+      "emotion": "angry",
+      "dialogue": "How will you handle this?",
+      "choices": [
+        {
+          "text": "\"I earned Moose's token. That counts for something.\" (Deflect)",
+          "effects": {
+            "respect": 5
+          },
+          "next": "sheriff_survival_1"
+        },
+        {
+          "text": "\"Try it. I'm faster than I look.\" (Threaten - VERY RISKY)",
+          "effects": {
+            "respect": -10
+          },
+          "next": "sheriff_death_threat"
+        },
+        {
+          "text": "\"I'll pay double the tax. $20. No trouble.\" (Submit)",
+          "effects": {
+            "money": -20,
+            "respect": 3
+          },
+          "next": "sheriff_survival_1"
+        },
+        {
+          "text": "\"I'm looking for Sarah Chance's killer. Maybe you know something?\" (Investigate)",
+          "effects": {
+            "respect": 8
+          },
+          "next": "sheriff_interest_1"
+        }
+      ]
+    },
+    "sheriff_disrespect_choices_poor": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/angry.png",
+      "emotion": "angry",
+      "dialogue": "You're broke AND you have no respect. That's a bad combination in Perdition.",
+      "choices": [
+        {
+          "text": "\"I earned Moose's token. That counts for something.\" (Deflect)",
+          "effects": {
+            "respect": 5
+          },
+          "next": "sheriff_survival_1"
+        },
+        {
+          "text": "\"Try it. I'm faster than I look.\" (Threaten - VERY RISKY)",
+          "effects": {
+            "respect": -10
+          },
+          "next": "sheriff_death_threat"
+        },
+        {
+          "text": "\"I'm looking for Sarah Chance's killer. Maybe you know something?\" (Investigate)",
+          "effects": {
+            "respect": 8
+          },
+          "next": "sheriff_interest_1"
+        }
+      ]
+    },
+    "sheriff_death_threat": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/killing.png",
+      "emotion": "killing",
+      "dialogue": "Wrong answer, stranger.",
+      "narration": "The gunshot echoes. You feel cold spreading through your chest. The last thing you see is the Sheriff holstering his weapon, bored. The last thing you hear is coins clinking as he loots your corpse.",
+      "next": "game_over_sheriff"
+    },
+    "game_over_sheriff": {
+      "type": "system",
+      "action": "game_over",
+      "message": "KILLED BY SHERIFF MCCALISTER\n\n'In the temporal casinos, death is just another loss. The wheel spins again.'\n\nRespect is everything in the Wild West. Without it, you're already dead.",
+      "restart": true
+    },
+    "sheriff_neutral_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "I hear Moose gave you that token. He's got good judgment, usually. So I'll give you a chance to prove yourself, [PLAYER_NAME]. But step carefully. This casino isn't like Moose's little card parlor.",
+      "narration": "The tension eases slightly. The Sheriff sits across from you, still watching like a predator.",
+      "next": "sheriff_intro_spoke"
+    },
+    "sheriff_respect_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "happy",
+      "dialogue": "Word travels fast in these parts. They say you handled yourself well at The Dusty Dollar. Moose doesn't give tokens to fools. Sit down, [PLAYER_NAME]. Let's talk business.",
+      "narration": "The Sheriff's demeanor shifts. He's still dangerous, but there's respect in his eyes now.",
+      "next": "sheriff_intro_spoke"
+    },
+    "sheriff_survival_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Smart. I like people who know when to bend. Sit down. You've bought yourself a conversation.",
+      "effects": {
+        "respect": 5
+      },
+      "next": "sheriff_intro_spoke"
+    },
+    "sheriff_interest_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "interested",
+      "dialogue": "Sarah Chance... Now that's a name I haven't heard in a while. Or maybe I hear it every day, depending on which timeline we're in. You've got guts asking about her. Sit down. This conversation just got interesting.",
+      "effects": {
+        "respect": 10
+      },
+      "next": "sheriff_sarah_hook"
+    },
+    "sheriff_sarah_hook": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Sarah Chance was a lot of things. Deputy, card shark, killer, victim. She was all of them at once. The loops do that\u2014split a person into seventeen different truths. I knew one version of her. Maybe you're looking for another.",
+      "narration": "He pulls out a worn photograph. In it, Sarah Chance stands next to the Sheriff. But her face flickers between young and old, smiling and screaming.",
+      "next": "sheriff_intro_spoke"
+    },
+    "sheriff_intro_spoke": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The Broken Spoke ain't like other casinos, [PLAYER_NAME].",
+      "narration": "The Sheriff gestures around the room. The roulette wheel spins backwards. Cards shuffle themselves. Dice roll uphill. Time moves wrong here.",
+      "next": "sheriff_2"
+    },
+    "sheriff_2": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "This casino sits on a temporal wound\u2014a place where Sarah Chance died seventeen times in seventeen different ways. Each death left a scar on reality. The wheel? It spins through those death-moments. Every bet is a gamble with her ghost.",
+      "next": "sheriff_choice_1"
+    },
+    "sheriff_choice_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "interested",
+      "dialogue": "I'll make you a deal. Play my game, win, and I'll tell you about one of Sarah's deaths. The real details. The kind that matter. But if you lose... well, let's just say the house always collects its debts. One way or another.",
+      "narration": "The Sheriff's smile doesn't reach his eyes. Around you, ghostly figures flicker in and out of existence\u2014echoes of past gamblers who lost.",
+      "choices": [
+        {
+          "text": "\"What kind of game are we talking about?\" (Cautious)",
+          "effects": {
+            "respect": 2
+          },
+          "next": "sheriff_game_explain"
+        },
+        {
+          "text": "\"I didn't come here to play it safe. Deal me in.\" (Bold)",
+          "effects": {
+            "respect": 10
+          },
+          "next": "sheriff_impressed_1"
+        },
+        {
+          "text": "\"What happens if I refuse?\" (Defiant)",
+          "effects": {
+            "respect": -5
+          },
+          "next": "sheriff_refuse_check"
+        },
+        {
+          "text": "\"Tell me about Sarah first. Then I'll decide.\" (Negotiate)",
+          "effects": {
+            "respect": 5
+          },
+          "next": "sheriff_sarah_tease"
+        }
+      ]
+    },
+    "sheriff_refuse_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "respect < 15",
+          "next": "sheriff_refuse_death"
+        },
+        {
+          "condition": "respect >= 15",
+          "next": "sheriff_refuse_accept"
+        }
+      ]
+    },
+    "sheriff_refuse_death": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/angry.png",
+      "emotion": "angry",
+      "dialogue": "Refuse? Boy, you don't understand. In The Broken Spoke, everyone plays. It's not optional. And since you lack the respect to make demands...",
+      "narration": "The Sheriff stands. The room darkens. Ghostly hands reach from the floor, pulling you down into the temporal wound beneath the casino.",
+      "next": "game_over_spoke_consumed"
+    },
+    "game_over_spoke_consumed": {
+      "type": "system",
+      "action": "game_over",
+      "message": "CONSUMED BY THE BROKEN SPOKE\n\n'The casino doesn't like refusals. You join the other echoes, gambling eternally in the loops beneath reality.'\n\nYou needed more respect to refuse the Sheriff's game.",
+      "restart": true
+    },
+    "sheriff_refuse_accept": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Interesting. Most people don't have the spine to refuse. Alright, [PLAYER_NAME]. You've earned a choice. Walk away now, keep your token, learn nothing... or stay, play, and maybe learn something about your mother that'll crack your mind open.",
+      "narration": "He's testing you. Every word is a calculation.",
+      "choices": [
+        {
+          "text": "\"I'm staying. Deal the cards.\" (Play)",
+          "effects": {
+            "respect": 5
+          },
+          "next": "sheriff_game_explain"
+        },
+        {
+          "text": "\"I'll come back when I'm ready.\" (Leave - NOT IMPLEMENTED YET)",
+          "effects": {
+            "respect": 3
+          },
+          "next": "sheriff_leave"
+        }
+      ]
+    },
+    "sheriff_leave": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Smart. Knowing when to fold is a skill. The Broken Spoke will be here when you return. It's always here. Was always here. Will always be here.",
+      "narration": "As you walk toward the exit, you hear the Sheriff's voice echo: 'Sarah Chance walked out too. Seventeen times. She always came back.'",
+      "next": "casino_2_return"
+    },
+    "casino_2_return": {
+      "type": "system",
+      "action": "return_to_map",
+      "unlock": "casino_2"
+    },
+    "sheriff_sarah_tease": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "interested",
+      "dialogue": "You want a taste before the meal? Alright. Sarah Chance died on a Tuesday. Also a Friday. And a Sunday that never existed. She was shot by her lover. Also by herself. And by someone who hasn't been born yet. Now sit down and play.",
+      "next": "sheriff_game_explain"
+    },
+    "sheriff_impressed_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "happy",
+      "dialogue": "Ha! Now that's the spirit. I like you, [PLAYER_NAME]. You got the same fire Sarah had. That same stupid bravery that got her killed seventeen ways. Let's see if you're luckier than she was.",
+      "effects": {
+        "respect": 5
+      },
+      "next": "sheriff_game_explain"
+    },
+    "sheriff_game_explain": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The game is simple. Death's Roulette.",
+      "narration": "The Sheriff spins a wheel covered in bloodstains. Each number represents one of Sarah's seventeen deaths. Land on a death, and you see that moment. Collect three death-visions, win the game. But if the wheel lands on YOUR death\u2014the one waiting for you in a future loop\u2014you lose everything.",
+      "next": "sheriff_bet_choice"
+    },
+    "sheriff_bet_choice": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "What will you wager, [PLAYER_NAME]? Money's easy. Respect means something. But if you're really brave... bet your memories. Win, and you keep them plus mine. Lose, and you forget why you came here.",
+      "choices": [
+        {
+          "text": "\"I'll bet money. 30 dollars.\" (Safe bet)",
+          "effects": {
+            "money": -30
+          },
+          "next": "sheriff_game_money"
+        },
+        {
+          "text": "\"I'll bet my respect. All of it.\" (Risky)",
+          "effects": {
+            "respect": -10
+          },
+          "next": "sheriff_game_respect"
+        },
+        {
+          "text": "\"I'll bet my memories of Sarah.\" (Dangerous)",
+          "next": "sheriff_game_memory"
+        },
+        {
+          "text": "\"I'll bet nothing. But I won't back down either.\" (Pride)",
+          "effects": {
+            "respect": 15
+          },
+          "next": "sheriff_game_pride"
+        }
+      ]
+    },
+    "sheriff_game_money": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The wheel spins. Blood drips upward from its surface.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: 7. Sarah's seventh death. You see: Sarah Chance, shot in the back by someone wearing a deputy's badge. The shooter's face is covered in shadow, but their hands shake. It was someone who loved her.",
+      "next": "sheriff_vision_1"
+    },
+    "sheriff_game_respect": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The wheel spins faster, sensing the weight of your bet.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: 13. Sarah's thirteenth death. You see: Sarah Chance strangling herself with her own hands, but her eyes show someone else is controlling her body. The hands belong to her, but the murder doesn't.",
+      "next": "sheriff_vision_2"
+    },
+    "sheriff_game_memory": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The wheel howls as it spins. It knows what memories taste like.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: 1. Sarah's first death. You see: Sarah Chance, young, beautiful, laughing. Then a gunshot. Her expression doesn't change. She knew it was coming. She CHOSE it. This death was a beginning, not an end.",
+      "next": "sheriff_vision_3"
+    },
+    "sheriff_game_pride": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The Sheriff laughs. 'Betting pride against fate. Bold.'",
+      "narration": "The wheel spins slowly, deliberately. CLICK. CLICK. CLICK. It lands on: 17. Sarah's final death. You see: Sarah Chance standing in THIS casino, at THIS wheel, making THIS bet. She's looking at you. She mouths: 'Run.'",
+      "next": "sheriff_vision_4"
+    },
+    "sheriff_vision_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Death seven. The betrayal death. Someone who loved Sarah killed her that day. Could've been me. Could've been her future self. Could've been you, in a loop you haven't lived yet. Spin again?",
+      "choices": [
+        {
+          "text": "\"Spin again.\" (Continue game)",
+          "next": "sheriff_spin_2_money"
+        },
+        {
+          "text": "\"I've seen enough. Cash out.\" (Take small win)",
+          "effects": {
+            "money": 40,
+            "respect": -5
+          },
+          "next": "sheriff_cash_out_early"
+        }
+      ]
+    },
+    "sheriff_vision_2": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "interested",
+      "dialogue": "Death thirteen. The puppet death. Someone else wore Sarah's body that day, used her hands to end her life. Possession? Time loop madness? Or something worse? Spin again, gambler?",
+      "choices": [
+        {
+          "text": "\"Keep spinning.\" (Continue game)",
+          "next": "sheriff_spin_2_respect"
+        },
+        {
+          "text": "\"I fold.\" (Take loss, keep respect)",
+          "effects": {
+            "respect": 10
+          },
+          "next": "sheriff_fold_early"
+        }
+      ]
+    },
+    "sheriff_vision_3": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/meh.png",
+      "emotion": "sad",
+      "dialogue": "Death one. The chosen death. Sarah walked into her first death willingly. She needed to die to start the loops, to become what she needed to be. It's the saddest one. The one that damned her. Spin for the second vision?",
+      "choices": [
+        {
+          "text": "\"I need to see more.\" (Continue game)",
+          "next": "sheriff_spin_2_memory"
+        },
+        {
+          "text": "\"This is too much. Stop.\" (Lose bet, keep sanity)",
+          "effects": {
+            "money": 20
+          },
+          "next": "sheriff_stop_game"
+        }
+      ]
+    },
+    "sheriff_vision_4": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "interested",
+      "dialogue": "Death seventeen. The recursive death. The death that's happening right now, has always been happening, will always happen. She died at this table. Maybe you're her. Maybe I'm killing you right now and don't know it. Spin again?",
+      "choices": [
+        {
+          "text": "\"Spin. I'm not afraid.\" (Continue game)",
+          "next": "sheriff_spin_2_pride"
+        },
+        {
+          "text": "\"No. Something's wrong here.\" (Stop game)",
+          "effects": {
+            "respect": 20
+          },
+          "next": "sheriff_truth_moment"
+        }
+      ]
+    },
+    "sheriff_spin_2_money": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Second spin. The wheel groans.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: YOUR death. You see yourself, older, standing in a casino that doesn't exist yet. You're holding a gun. Sarah Chance stands in front of you. She says: 'Do it. End the loop.' You pull the trigger. But you're not sure who died.",
+      "next": "sheriff_death_vision_resolve"
+    },
+    "sheriff_spin_2_respect": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Second spin. The wheel whispers names.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: 9. Sarah's ninth death. You see: Sarah Chance drowning in a river that flows uphill. Her lungs fill with water that's older than time. She's not struggling. She's BEEN drowning for seventeen years. This death never ends.",
+      "next": "sheriff_spin_3_respect"
+    },
+    "sheriff_spin_2_memory": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Second spin. The wheel smells your memories.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: 3. Sarah's third death. You see: Sarah Chance being erased. Not killed\u2014erased. Someone is removing her from photographs, from memories, from time itself. With each erasure, she screams but makes no sound. By the end, she never existed. But you remember her anyway.",
+      "next": "sheriff_spin_3_memory"
+    },
+    "sheriff_spin_2_pride": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Second spin. The wheel tests your resolve.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: 11. Sarah's eleventh death. You see: Sarah Chance aging rapidly, living seventeen lifetimes in seventeen seconds. She dies of old age as a young woman. Her last words: '[PLAYER_NAME], you have to stop coming back here.'",
+      "next": "sheriff_spin_3_pride"
+    },
+    "sheriff_death_vision_resolve": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/meh.png",
+      "emotion": "sad",
+      "dialogue": "You saw it. Your own death. That's the house's edge in Death's Roulette. Eventually, everyone sees their end. Yours is tangled up with Sarah's. You've lost the bet, but gained the knowledge. Was it worth it?",
+      "effects": {
+        "money": 50,
+        "respect": 15
+      },
+      "next": "sheriff_revelation_start"
+    },
+    "sheriff_spin_3_respect": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Third spin. Final spin.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: 14. Sarah's fourteenth death. You see: Sarah Chance split into seventeen pieces. Each piece lives a different moment of her life simultaneously. They're all dying, all living, all screaming, all laughing. She is everyone she ever was, all at once.",
+      "effects": {
+        "respect": 30,
+        "money": 60
+      },
+      "next": "sheriff_win_respect"
+    },
+    "sheriff_spin_3_memory": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Third spin. The wheel hungers.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: 16. Sarah's sixteenth death. You see: Sarah Chance remembering her own death before it happens. She lives her final moments over and over, trapped in a memory loop. Each loop, she tries something different. None of it works. She's been dying for seventeen eternities.",
+      "effects": {
+        "money": 80,
+        "respect": 40
+      },
+      "next": "sheriff_win_memory"
+    },
+    "sheriff_spin_3_pride": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Third spin. The wheel recognizes you.",
+      "narration": "CLICK. CLICK. CLICK. It lands on: 17 again. But this time, you see differently. Sarah isn't warning you. She's BECOME you. You are her seventeenth death. You are the loop closing. You are the reason this casino exists.",
+      "effects": {
+        "respect": 50,
+        "money": 100
+      },
+      "next": "sheriff_win_pride"
+    },
+    "sheriff_cash_out_early": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Smart. Knowing when to quit is survival. Take your money. Take this advice: Sarah never learned to quit. That's why she died seventeen times.",
+      "effects": {
+        "money": 40
+      },
+      "next": "sheriff_minimal_revelation"
+    },
+    "sheriff_fold_early": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "You kept your respect. That matters more than you know. Take your loss with dignity. That's more than Sarah managed.",
+      "next": "sheriff_minimal_revelation"
+    },
+    "sheriff_stop_game": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/meh.png",
+      "emotion": "sad",
+      "dialogue": "Too much, huh? Yeah. Sarah's deaths aren't easy to witness. Some truths break people. You're still standing. That counts for something.",
+      "next": "sheriff_minimal_revelation"
+    },
+    "sheriff_truth_moment": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "interested",
+      "dialogue": "You sensed it. Smart. Death seventeen is dangerous because it's recursive\u2014it's happening right now. Sarah died at this table. You're sitting where she sat. I'm saying what I said to her. This is her seventeenth death. Or maybe it's yours. Hard to tell in the loops.",
+      "effects": {
+        "respect": 25
+      },
+      "next": "sheriff_revelation_deep"
+    },
+    "sheriff_win_respect": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "happy",
+      "dialogue": "You won. You saw three of Sarah's deaths and kept your sanity. That's rare. Take your winnings. Take the silver token. And take this:",
+      "narration": "The Sheriff slides a bloodstained deputy's badge across the table. It has Sarah's name engraved on it. But the name keeps changing to yours, then back, then to names you don't recognize.",
+      "effects": {
+        "money": 60,
+        "respect": 30
+      },
+      "next": "sheriff_revelation_deep"
+    },
+    "sheriff_win_memory": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "interested",
+      "dialogue": "You won, and you paid in memories. The wheel gave them back, plus mine. You now remember things that haven't happened yet. Sarah's deaths are in your head now. You'll dream them. You'll see them when you close your eyes. Was it worth it?",
+      "effects": {
+        "money": 80,
+        "respect": 40
+      },
+      "next": "sheriff_revelation_deep"
+    },
+    "sheriff_win_pride": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "happy",
+      "dialogue": "Incredible. You didn't just win\u2014you understood. You saw that Sarah's seventeenth death is your first. The loop connects you. You're not investigating her murder, [PLAYER_NAME]. You're BECOMING her murder. Take the silver token. You've earned it.",
+      "effects": {
+        "money": 100,
+        "respect": 50
+      },
+      "next": "sheriff_revelation_ultimate"
+    },
+    "sheriff_minimal_revelation": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Here's what I'll tell you for free: Sarah Chance wasn't just murdered. She was murdered by the loops themselves. Every version of her death is true. The killer is everyone who ever loved her. Including herself. Including you.",
+      "effects": {
+        "respect": 10
+      },
+      "next": "sheriff_departure_low"
+    },
+    "sheriff_revelation_start": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/meh.png",
+      "emotion": "sad",
+      "dialogue": "You saw your death tangled with hers. That means you're part of the loop now. Sarah died seventeen times. You'll die seventeen times too. Maybe you already have. Maybe this is your second death, or your fifteenth. The wheel doesn't care about order.",
+      "effects": {
+        "respect": 15
+      },
+      "next": "sheriff_departure_mid"
+    },
+    "sheriff_revelation_deep": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The Sheriff's face flickers. For a moment, he looks like Sarah. Then like you. Then like himself again.",
+      "narration": "He says: 'I was there for seven of her deaths. I CAUSED three of them. Not on purpose\u2014the loops made me. In one timeline, I'm her killer. In another, I'm her father. In another, we never met. But in THIS timeline, I'm the one who remembers.'",
+      "next": "sheriff_truth_bomb"
+    },
+    "sheriff_revelation_ultimate": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The Sheriff removes his hat. Underneath, his face shifts between seventeen different faces.",
+      "narration": "He says: 'I'm not Sheriff McCal ister. I'm the amalgamation of everyone who witnessed Sarah's deaths. The bartender. The lover. The killer. The victim. I'm the Broken Spoke's memory made flesh. And you, [PLAYER_NAME]\u2014you just became part of me.'",
+      "next": "sheriff_truth_bomb_ultimate"
+    },
+    "sheriff_truth_bomb": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Here's the truth: Sarah Chance is alive. She's dead. Both are true. She exists in seventeen superpositions. You're not looking for her killer\u2014you're looking for the moment where all seventeen deaths converge. That moment is in Casino Ten. The last casino. The Eternal Ante.",
+      "next": "sheriff_final_choice"
+    },
+    "sheriff_truth_bomb_ultimate": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/listening.png",
+      "emotion": "interested",
+      "dialogue": "You want to know who killed Sarah? Look at your hands. In seven timelines, it's you. Look at Scarlett. In three timelines, it's her. Look at Moose. In four timelines, it's him. We all killed her. We're all HER. The investigation is a loop that eats itself.",
+      "next": "sheriff_final_choice"
+    },
+    "sheriff_final_choice": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "You can keep going. Hit Casino Three next\u2014The Silver Spur, where Ling the Dream Merchant trades in nightmares. Or you can walk away. Take what you learned, live your life, forget about Sarah. But we both know you won't. This casino's in your blood now.",
+      "narration": "He hands you the silver token. It's warm, like it's been in someone's hand for seventeen years.",
+      "choices": [
+        {
+          "text": "\"I need to know more. I'm going to Casino Three.\" (Continue)",
+          "effects": {
+            "respect": 10
+          },
+          "next": "sheriff_complete_forward"
+        },
+        {
+          "text": "\"I need time to process this. I'll be back.\" (Take a break - returns to map)",
+          "effects": {
+            "respect": 5
+          },
+          "next": "sheriff_complete_break"
+        },
+        {
+          "text": "\"Tell me about my own death. The one I saw.\" (Dig deeper)",
+          "effects": {
+            "respect": 15
+          },
+          "next": "sheriff_your_death"
+        }
+      ]
+    },
+    "sheriff_departure_low": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Go on. Get out of here. Come back when you've got more spine. Or don't come back at all. The Spoke will be here. It's always here.",
+      "effects": {
+        "money": 20
+      },
+      "next": "sheriff_return_map"
+    },
+    "sheriff_departure_mid": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "You did okay, [PLAYER_NAME]. Not great, but okay. Take this small silver token\u2014it's enough to get you into Casino Three if you dare. The deeper you go, the worse it gets. Fair warning.",
+      "effects": {
+        "money": 40,
+        "respect": 15
+      },
+      "next": "sheriff_return_map"
+    },
+    "sheriff_your_death": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The Sheriff's expression turns grave.",
+      "narration": "He says: 'Your death happens at Casino Ten. You make it all the way to the end. You solve the mystery. You find Sarah's killer. And then you realize... you ARE Sarah's killer. You always were. And when you pull the trigger on yourself, the loop resets. You wake up at the train station. Scarlett is there. And it starts again.'",
+      "next": "sheriff_ultimate_horror"
+    },
+    "sheriff_ultimate_horror": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/meh.png",
+      "emotion": "sad",
+      "dialogue": "Sorry, kid. You asked. The good news? You've done this seventeen times already. You're getting better at it. Maybe this loop, you'll break free. Maybe. Or maybe you'll just die faster and more entertainingly. Either way, I'll be here watching.",
+      "effects": {
+        "respect": 20
+      },
+      "next": "sheriff_complete_forward"
+    },
+    "sheriff_complete_forward": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The Sheriff tips his hat. Behind him, the roulette wheel spins one more time, landing on infinity.",
+      "narration": "You pocket the silver token. It whispers Sarah's name. Or your name. You can't tell the difference anymore. The Broken Spoke's doors open, leading not to the street, but to the next casino. You step through.",
+      "next": "sheriff_complete"
+    },
+    "sheriff_complete_break": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/normal.png",
+      "emotion": "normal",
+      "dialogue": "Smart. Take time. Process. Cry if you need to. Sarah did, between deaths. Then come back when you're ready to go deeper. The casinos aren't going anywhere. They're ALL going everywhere. Time's funny like that.",
+      "next": "sheriff_complete"
+    },
+    "sheriff_complete": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You leave The Broken Spoke with more questions than answers.",
+      "narration": "Behind you, the casino flickers. For a moment, you see Sarah Chance standing at the bar, watching you leave. She raises a glass in salute. Or farewell. Or warning. Then she's gone. Was she ever there?",
+      "effects": {
+        "tokensCollected": [
+          "silver_token"
+        ]
+      },
+      "next": "sheriff_return_map"
+    },
+    "sheriff_return_map": {
+      "type": "system",
+      "action": "return_to_map",
+      "unlock": "casino_3"
+    },
+    "mary_2a": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "mary_crow_feather",
+      "character_image": "assets/images/characters/mary_crow_feather_sad.png",
+      "emotion": "sad",
+      "dialogue": "The temporal torture gave me eyes. Each loop, another eye opened. I see through time now. I watch myself die across centuries. I see the moment I became Sarah Chance.",
+      "next": "mary_revelation_1"
+    },
+    "mary_2b": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "mary_crow_feather",
+      "character_image": "assets/images/characters/mary_crow_feather_sad.png",
+      "emotion": "sad",
+      "dialogue": "Yes. I am Sarah. Or I was. Or I will be. The loops twisted me, child. I loved someone once\u2014loved them so deeply it became hate. That love inverted itself but remained exactly the same force.",
+      "next": "mary_revelation_1"
+    },
+    "mary_2c": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "mary_crow_feather",
+      "character_image": "assets/images/characters/mary_crow_feather_normal.png",
+      "emotion": "normal",
+      "dialogue": "The wheel knows time is broken. So it spins the way time actually moves\u2014backwards, forwards, sideways. Every number wins. Every number loses. It depends on when you're watching from.",
+      "next": "mary_revelation_1"
+    },
+    "mary_2d": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "mary_crow_feather",
+      "character_image": "assets/images/characters/mary_crow_feather_normal.png",
+      "emotion": "normal",
+      "dialogue": "Acceptance. Good. You understand nothing matters and everything matters. The vision quest will show you what you need to see.",
+      "next": "mary_revelation_1"
+    },
+    "mary_revelation_1": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Mary's thirty-seven eyes blink in sequence, each showing a different scene:",
+      "narration": "Eye 1: Sarah Chance as a young woman. Eye 7: Sarah becoming Mary Crow Feather after torture. Eye 13: The killer with Sarah's face. Eye 19: You, older, returning to this moment. Eye 37: This conversation, repeated eternally.",
+      "next": "mary_revelation_2"
+    },
+    "mary_revelation_2": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "mary_crow_feather",
+      "character_image": "assets/images/characters/mary_crow_feather_sad.png",
+      "emotion": "sad",
+      "dialogue": "I was Sarah Chance. I went through the loops so many times the torture made me into this\u2014a creature with too many eyes, seeing too much time. The woman you knew as your mother is me, before I became... this.",
+      "next": "mary_revelation_3"
+    },
+    "mary_revelation_3": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "mary_crow_feather",
+      "character_image": "assets/images/characters/mary_crow_feather_angry.png",
+      "emotion": "angry",
+      "dialogue": "The killer? The killer IS me. Another version, from another loop, where love became hate while staying love. She erases Sarah from specific moments\u2014trying to undo herself, to prevent this transformation. But she can't.",
+      "next": "mary_vision_quest"
+    },
+    "mary_vision_quest": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Mary places her hand on your forehead. Seventeen eyes open on her palm.",
+      "narration": "You see: Your mother dying. Your mother killing herself. Your mother becoming Mary. Scarlett revealing she's your daughter from a future loop. The Baron pulling strings. Aldrich watching it all, laughing.",
+      "next": "mary_game"
+    },
+    "mary_game": {
+      "type": "game",
+      "bg": "assets/images/utilities/roulette_table.png",
+      "game_type": "vision_roulette",
+      "special": "The wheel spins backwards through time. Bet on the past, present, or future.",
+      "buy_in": 15,
+      "rounds": 3,
+      "win": "mary_win",
+      "lose": "mary_lose"
+    },
+    "mary_win": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "mary_crow_feather",
+      "character_image": "assets/images/characters/mary_crow_feather_normal.png",
+      "emotion": "normal",
+      "dialogue": "You won across timelines. Impressive. Take the bronze token. Take this photograph\u2014it shows Sarah Chance, but her face shifts between mine, yours, and Scarlett's. Take the feather\u2014it contains my memories.",
+      "receive": "bronze_token",
+      "items": [
+        "shifting_photograph",
+        "memory_feather"
+      ],
+      "effects": {
+        "money": 50,
+        "respect": 25
+      },
+      "next": "mary_final"
+    },
+    "mary_final": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "mary_crow_feather",
+      "character_image": "assets/images/characters/mary_crow_feather_sad.png",
+      "emotion": "sad",
+      "dialogue": "Before you go, child\u2014know this. Scarlett isn't what she seems. She's playing a game older than Perdition itself. And you? You've been here before. Many times. You just don't remember yet.",
+      "next": "loop_2_encounter"
+    },
+    "loop_2_encounter": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "As you leave, you encounter Loop 2 You, covered in blood.",
+      "narration": "Loop 2 You: 'McCalister is next. Don't trust him. He'll show you philosophy but hide the truth.' You: 'What truth?' Loop 2 You: 'That you're already dead. We all are. Perdition is the afterlife, and we're stuck in purgatory's casino.'",
+      "next": "casino_3_enter"
+    },
+    "mary_lose": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You lose. Mary absorbs you into her timeline vision. You become the thirty-eighth eye, watching forever, never able to act.",
+      "can_retry": true
+    },
+    "casino_3_enter": {
+      "type": "narration",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Casino 3: The Silver Saddle. Where the Four Aces gather. Hearts, Diamonds, Clubs, and the missing Spades. They debate philosophy while the world burns outside.",
+      "next": "texas_red_introduction"
+    },
+    "texas_red_introduction": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "MCCALISTER sits with three empty chairs. One for each missing Ace. He deals hands to all of them.",
+      "narration": "McCalister: 'Hearts\u2014your father Aldrich, fractured across time. Diamonds\u2014me, the observer. Clubs\u2014Sheriff Marcus, the enforcer. Spades\u2014the killer. We four built Perdition. Now we're trapped in it.'",
+      "next": "texas_red_respect_check"
+    },
+    "texas_red_respect_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "respect < 0",
+          "next": "texas_red_low_respect_death"
+        },
+        {
+          "condition": "respect >= 0",
+          "next": "texas_red_1"
+        }
+      ]
+    },
+    "texas_red_low_respect_death": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/killing.png",
+      "emotion": "killing",
+      "dialogue": "Wait. I sense something wrong with you. Your reputation precedes you\u2014and it stinks of cowardice and disrespect. The Four Aces don't waste time with nobodies who insult everyone they meet.",
+      "next": "texas_red_low_respect_death_2"
+    },
+    "texas_red_low_respect_death_2": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/killing.png",
+      "text": "McCalister snaps his fingers. You feel your existence unraveling. 'Come back when you've earned some respect. If you ever do.' Your vision fades to black. You're erased from this loop.",
+      "can_retry": true
+    },
+    "texas_red_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "Welcome to the afterlife, child. Perdition isn't a town\u2014it's purgatory dressed as the Wild West. We're all dead here. We died in 1889 when time broke. Now we play cards forever.",
+      "choices": [
+        {
+          "text": "We're all dead? But I'm alive.",
+          "next": "texas_red_2a",
+          "effects": {
+            "emotion": "sad",
+            "respect": 15
+          }
+        },
+        {
+          "text": "Tell me about the Four Aces.",
+          "next": "texas_red_2b",
+          "effects": {
+            "emotion": "normal",
+            "respect": 20
+          }
+        },
+        {
+          "text": "Who broke time?",
+          "next": "texas_red_2c",
+          "effects": {
+            "emotion": "normal",
+            "respect": 10
+          }
+        },
+        {
+          "text": "Deal the cards, philosopher.",
+          "next": "texas_red_2d",
+          "effects": {
+            "emotion": "angry",
+            "respect": 5
+          }
+        }
+      ]
+    },
+    "texas_red_2a": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "sad",
+      "dialogue": "Are you? Look at your hands\u2014they flicker between solid and transparent. You've been 'alive' for seventeen loops. Each time you think it's the first. Death is just another state of being here.",
+      "next": "texas_red_2a_death_proof"
+    },
+    "texas_red_2a_death_proof": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "McCalister shows you a ledger. Your name appears seventeen times, each with a date of death: shot, hanged, drowned, burned. All on the same day in 1889.",
+      "narration": "McCalister: 'See? You die every time. Sometimes heroically, sometimes pathetically. But you always come back, convinced this is your first time in Perdition. That's the curse\u2014eternal repetition with no memory of it.'",
+      "next": "texas_red_spades_reveal"
+    },
+    "texas_red_2b": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "Hearts is Aldrich, your father. He exists in all moments simultaneously now. Diamonds\u2014that's me, cursed to observe but never act. Clubs is Marcus, the sheriff who enforces the loop. And Spades... Spades is the killer.",
+      "next": "texas_red_2b_four_aces"
+    },
+    "texas_red_2b_four_aces": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The empty chairs at the table begin to glow. You see glimpses: Aldrich crying, Sheriff Marcus loading a gun, a shadowy figure sharpening a knife.",
+      "narration": "McCalister: 'We were the founders. Aldrich brought love and madness. I brought observation and detachment. Marcus brought order and violence. Spades brought death and truth. Together we created Perdition\u2014a prison pretending to be a town.'",
+      "next": "texas_red_spades_reveal"
+    },
+    "texas_red_2c": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "Love broke time. Your parents loved each other so much it created a paradox. Sarah tried to save Aldrich from madness. Aldrich tried to prevent Sarah's death. Each attempt created another loop, another fracture.",
+      "next": "texas_red_2c_love_paradox"
+    },
+    "texas_red_2c_love_paradox": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "McCalister shows you a photograph. It shows your mother and father, but their faces shift\u2014young, old, happy, screaming, alive, dead.",
+      "narration": "McCalister: 'Love created the loop. Every time Sarah saves Aldrich, he goes mad from the guilt. Every time Aldrich saves Sarah, she's killed by the killer\u2014who is YOU from a future loop. Love became the trap. The harder they fought to save each other, the more trapped they became.'",
+      "next": "texas_red_spades_reveal"
+    },
+    "texas_red_2d": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/angry.png",
+      "emotion": "angry",
+      "dialogue": "Philosophy IS the game, boy. Every card represents a choice. Every choice creates a timeline. Every timeline is hell. But sure, let's play.",
+      "next": "texas_red_2d_impatient"
+    },
+    "texas_red_2d_impatient": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/angry.png",
+      "emotion": "angry",
+      "dialogue": "Impatience is a form of denial. You rush to the game because you're afraid of the truth. Fine. But know this\u2014I've seen you play this game seventy-three times across seventeen loops. You ALWAYS bet your sanity. And you always lose it.",
+      "next": "texas_red_spades_reveal"
+    },
+    "texas_red_philosophy_1": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "McCalister stands and walks to the window. Outside, the same gunfight repeats endlessly.",
+      "narration": "Red: 'See that? Billy shoots Tom. Tom dies. Five minutes later, Tom shoots Billy. Billy dies. They've been killing each other for eternity. That's Perdition\u2014an infinite loop of violence where death means nothing.'",
+      "next": "texas_red_philosophy_2"
+    },
+    "texas_red_philosophy_2": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "sad",
+      "dialogue": "The Four Aces used to debate whether we could escape. Hearts said love would free us. Diamonds\u2014me\u2014said observation would reveal the exit. Clubs believed enforcement of order was key. Spades knew the truth.",
+      "next": "texas_red_philosophy_3"
+    },
+    "texas_red_philosophy_3": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/angry.png",
+      "emotion": "angry",
+      "dialogue": "Spades understood that there is no exit. Purgatory isn't a punishment\u2014it's a state of being. We're not trapped in the loop. We ARE the loop. Your mother discovered this. That's why she had to be erased.",
+      "next": "texas_red_revelation"
+    },
+    "texas_red_revelation": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The three empty chairs at the table begin to shimmer. Figures appear\u2014translucent, ghost-like.",
+      "narration": "Chair 1: Aldrich, weeping. Chair 2: Sheriff Marcus, stone-faced. Chair 3: A figure with your face, older, wearing a Spade pin. Red: 'There. The Four Aces complete. You see it now?'",
+      "next": "texas_red_spades_reveal"
+    },
+    "texas_red_spades_reveal": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "Spades is you. Future you, from Loop 7. You killed your mother to ensure your own birth. It's a temporal causality loop\u2014you exist because she died. She died because you killed her. Both are true.",
+      "choices": [
+        {
+          "text": "That's insane. I would never kill my mother.",
+          "next": "texas_red_denial",
+          "effects": {
+            "respect": 10
+          }
+        },
+        {
+          "text": "If I'm Spades, then I accept it. Let's play.",
+          "next": "texas_red_accept",
+          "effects": {
+            "respect": 25
+          }
+        },
+        {
+          "text": "You're lying. This is manipulation.",
+          "next": "texas_red_accuse",
+          "effects": {
+            "respect": -15
+          }
+        },
+        {
+          "text": "I refuse to play your game.",
+          "next": "texas_red_refuse",
+          "effects": {
+            "respect": -30
+          }
+        }
+      ]
+    },
+    "texas_red_denial": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "Denial is comfortable. But look\u2014in the mirror behind me. You're holding a knife. You're always holding a knife. In every timeline, you make the same choice.",
+      "next": "texas_red_bet_intro"
+    },
+    "texas_red_accept": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/happy.png",
+      "emotion": "happy",
+      "dialogue": "Good. Acceptance is the first step to breaking free. Or becoming trapped forever. Let's find out which. The cards will decide.",
+      "next": "texas_red_bet_intro"
+    },
+    "texas_red_accuse": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/angry.png",
+      "emotion": "angry",
+      "dialogue": "Manipulation? Boy, I'm cursed to only observe and speak truth. I can't lie even if I wanted to. The loop won't let me. But if you don't believe me, refuse the game. Walk away. See what happens.",
+      "next": "texas_red_bet_intro"
+    },
+    "texas_red_refuse": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/killing.png",
+      "emotion": "killing",
+      "dialogue": "Refuse? There is no refusing in Perdition. You play or you die. Actually, you're already dead. But I can make you MORE dead. Permanently erased from all loops. Choose now\u2014play, or vanish.",
+      "choices": [
+        {
+          "text": "Fine. I'll play your damn game.",
+          "next": "texas_red_bet_intro",
+          "effects": {
+            "respect": -10
+          }
+        },
+        {
+          "text": "Go ahead. Erase me. I don't care.",
+          "next": "mccalister_death",
+          "effects": {
+            "respect": -50
+          }
+        }
+      ]
+    },
+    "mccalister_death": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/killing.png",
+      "text": "McCalister sighs and snaps his fingers. You feel yourself unraveling\u2014not dying, but un-existing. Every version of you across every loop dissolves. The last thing you hear is his voice: 'Some people choose oblivion. I tried to warn you.'",
+      "can_retry": true
+    },
+    "texas_red_bet_intro": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "The game is simple. Five card draw. You bet something precious\u2014your sanity, your money, or your truth. Win, and you get the silver token. Lose, and you lose what you bet. Forever.",
+      "next": "texas_red_bet_check"
+    },
+    "texas_red_bet_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "money >= 100",
+          "next": "texas_red_bet_choice_full"
+        },
+        {
+          "condition": "money < 100",
+          "next": "texas_red_bet_choice_poor"
+        }
+      ]
+    },
+    "texas_red_bet_choice_full": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "sanity < 30",
+          "next": "texas_red_bet_choice_full_insane"
+        },
+        {
+          "condition": "sanity >= 30",
+          "next": "texas_red_bet_choice_full_normal"
+        }
+      ]
+    },
+    "texas_red_bet_choice_full_insane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "Your mind is already fractured. You have no sanity left to bet. Choose money or memories.",
+      "choices": [
+        {
+          "text": "I bet $100. Let's play.",
+          "next": "texas_red_bet_money",
+          "effects": {
+            "money": -100
+          }
+        },
+        {
+          "text": "I bet my memories of my mother.",
+          "next": "texas_red_bet_truth",
+          "effects": {
+            "truth": -30
+          }
+        }
+      ]
+    },
+    "texas_red_bet_choice_full_normal": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "What will you bet?",
+      "choices": [
+        {
+          "text": "I bet my sanity. Show me the truth.",
+          "next": "texas_red_bet_sanity",
+          "effects": {
+            "sanity": -20
+          }
+        },
+        {
+          "text": "I bet $100. Let's play.",
+          "next": "texas_red_bet_money",
+          "effects": {
+            "money": -100
+          }
+        },
+        {
+          "text": "I bet my memories of my mother.",
+          "next": "texas_red_bet_truth",
+          "effects": {
+            "truth": -30
+          }
+        }
+      ]
+    },
+    "texas_red_bet_choice_poor": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "sanity < 30",
+          "next": "texas_red_bet_choice_poor_insane"
+        },
+        {
+          "condition": "sanity >= 30",
+          "next": "texas_red_bet_choice_poor_normal"
+        }
+      ]
+    },
+    "texas_red_bet_choice_poor_insane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "You're broke, and your mind is already fractured. You have nothing left but memories. That's all you can bet.",
+      "choices": [
+        {
+          "text": "Fine. Take my memories. I don't care anymore.",
+          "next": "texas_red_bet_truth",
+          "effects": {
+            "truth": -30
+          }
+        }
+      ]
+    },
+    "texas_red_bet_choice_poor_normal": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "I see you're broke. You don't have $100. That's fine\u2014there are other things to bet. Your sanity, or your memories of your mother.",
+      "choices": [
+        {
+          "text": "I bet my sanity. Show me the truth.",
+          "next": "texas_red_bet_sanity",
+          "effects": {
+            "sanity": -20
+          }
+        },
+        {
+          "text": "I bet my memories of my mother.",
+          "next": "texas_red_bet_truth",
+          "effects": {
+            "truth": -30
+          }
+        }
+      ]
+    },
+    "texas_red_bet_sanity": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The cards are dealt. You see them\u2014but also every possible hand in every possible timeline. Your mind fractures.",
+      "narration": "You win. But the cost is madness. You see your mother die seventeen different ways. You see yourself as the killer in twelve of them. The silver token appears in your hand, heavy with the weight of all possible futures.",
+      "next": "texas_red_win"
+    },
+    "texas_red_bet_money": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The cards are dealt. McCalister plays fairly\u2014you win with a straight flush.",
+      "narration": "He nods approvingly. 'Money is meaningless here anyway. But you played well. The silver token is yours.' He slides it across the table. It's warm to the touch, pulsing with strange energy.",
+      "next": "texas_red_win"
+    },
+    "texas_red_bet_truth": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The cards are dealt. As you play, your memories of Sarah Chance begin to fade. Her face blurs. Her voice becomes distant.",
+      "narration": "You win the hand. But when you try to remember your mother, there's only static. McCalister pushes the silver token toward you. 'You traded her for freedom. Was it worth it?'",
+      "next": "texas_red_win"
+    },
+    "texas_red_win": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "normal",
+      "dialogue": "You've won. Take the silver token. And this\u2014a blank card. In some loops, you're Spades. In others, you're the hero. The card reflects whichever you choose to be.",
+      "receive": "silver_token",
+      "items": [
+        "blank_ace_card",
+        "philosophical_notes"
+      ],
+      "effects": {
+        "money": 100,
+        "respect": 30
+      },
+      "next": "texas_red_final"
+    },
+    "texas_red_final": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "MCCALISTER",
+      "character_image": "assets/images/characters/mccalister/meh.png",
+      "emotion": "sad",
+      "dialogue": "Before you go\u2014understand this. Breaking the loop means accepting you might never have existed. Are you willing to unmake yourself to free everyone else? That's the real game, child. Not poker. Choice.",
+      "next": "casino_3_complete"
+    },
+    "casino_3_complete": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You leave The Silver Saddle with more questions than when you entered.",
+      "narration": "McCalister watches you go, still dealing cards to the empty chairs. In some loops, you're one of the Four Aces. In this one, you're still free. For now.",
+      "next": "casino_3_return_map"
+    },
+    "casino_3_return_map": {
+      "type": "system",
+      "action": "return_to_map",
+      "unlock": "casino_4"
+    },
+    "loop_3_encounter": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Outside, Loop 3 You appears, bleeding from wounds that haven't happened yet.",
+      "narration": "Loop 3 You: 'Diego is next. He'll confess his addiction. He'll beg you to save him. Don't. Some people choose hell.' You: 'Can I save him?' Loop 3 You: 'You can't even save yourself.'",
+      "next": "casino_4_enter"
+    }
+  },
+  "screens_part2": {
+    "casino_4_enter": {
+      "type": "narration",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Casino 4: The Golden Nugget. A temple of jade and gold that shouldn't exist. The walls breathe\u2014expanding with possibility, contracting with certainty. Every surface reflects infinite versions of you.",
+      "next": "ling_introduction"
+    },
+    "casino_4_complete": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You leave The Golden Nugget feeling lighter and heavier at once.",
+      "narration": "Ling watches you go, her form flickering between states. 'In some timelines, you never left,' she whispers. 'In others, you never arrived. In this one, you're still deciding which is true.'",
+      "next": "casino_4_return_map"
+    },
+    "casino_4_return_map": {
+      "type": "system",
+      "action": "return_to_map",
+      "unlock": "casino_5"
+    },
+    "casino_6_enter": {
+      "type": "narration",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "text": "Casino 6: The Iron Horse. A railroad station where all trains arrive simultaneously\u2014past, present, future, and never. Time doesn't flow here. It's frozen in a single second, experienced infinitely.",
+      "next": "cornelius_introduction"
+    },
+    "cornelius_introduction": {
+      "type": "special_scene",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "text": "CORNELIUS stands at a roulette wheel that spins without moving. He speaks frantically, his words overlapping with echo versions of himself.",
+      "narration": "Cornelius: 'This moment! This EXACT moment has happened 8,847 times! Each iteration slightly different! You've worn blue seventeen times, red forty-two times, and nothing in Loop 1,003! We're trapped in one second of trauma!'",
+      "next": "cornelius_1"
+    },
+    "cornelius_1": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "character": "cornelius",
+      "character_image": "assets/images/characters/cornelius_normal.png",
+      "emotion": "normal",
+      "dialogue": "Listen carefully\u2014there is no Perdition. No casinos. No journey. You're five years old, holding your father's gun, and this entire adventure is happening in the microsecond between picking it up and deciding what to do. We're all inside one frozen moment of choice.",
+      "choices": [
+        {
+          "text": "Show me proof. Show me the truth.",
+          "next": "cornelius_truth",
+          "effects": {
+            "emotion": "normal",
+            "respect": 35
+          }
+        },
+        {
+          "text": "How do I escape this moment?",
+          "next": "cornelius_2b",
+          "effects": {
+            "emotion": "sad",
+            "respect": 20
+          }
+        },
+        {
+          "text": "If we're frozen, how are we talking?",
+          "next": "cornelius_2c",
+          "effects": {
+            "emotion": "normal",
+            "respect": 25
+          }
+        },
+        {
+          "text": "Make it stop! Make everything stop!",
+          "next": "cornelius_2d",
+          "effects": {
+            "emotion": "angry",
+            "respect": 10
+          }
+        }
+      ]
+    },
+    "cornelius_truth": {
+      "type": "special_scene",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "text": "Cornelius waves his hand. Everything freezes except you and him. Then reality flickers\u2014",
+      "narration": "You see: A five-year-old child (you) in a nursery. Gun in small hands. Mother reaching forward, mouth open mid-scream. Father in the doorway, frozen mid-step. The clock reads 7:32:17 PM and has read that for fifteen years.",
+      "next": "cornelius_revelation"
+    },
+    "cornelius_revelation": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "character": "cornelius",
+      "character_image": "assets/images/characters/cornelius_happy.png",
+      "emotion": "happy",
+      "dialogue": "You see it now. This entire world\u2014Perdition, the casinos, all the characters\u2014is your five-year-old brain processing trauma. We're all aspects of your psyche. I'm your logic, desperately trying to understand. The casinos are stages of grief. The tokens are memories.",
+      "next": "cornelius_philosophy"
+    },
+    "cornelius_2b": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "character": "cornelius",
+      "character_image": "assets/images/characters/cornelius_sad.png",
+      "emotion": "sad",
+      "dialogue": "Escape? There is no escape. This IS stopped. Frozen. We're living in amber. The only way out is to complete the choice\u2014pull the trigger or put the gun down. But you've been avoiding that decision for 8,847 iterations.",
+      "next": "cornelius_philosophy"
+    },
+    "cornelius_2c": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "character": "cornelius",
+      "character_image": "assets/images/characters/cornelius_normal.png",
+      "emotion": "normal",
+      "dialogue": "Excellent question. Time is frozen, but consciousness continues. Think of it like dreaming\u2014hours can pass in a dream that takes seconds in reality. You're experiencing years while reality experiences milliseconds.",
+      "next": "cornelius_philosophy"
+    },
+    "cornelius_2d": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "character": "cornelius",
+      "character_image": "assets/images/characters/cornelius_angry.png",
+      "emotion": "angry",
+      "dialogue": "It IS stopped! Everything IS stopped! We're paralyzed at the moment of greatest trauma! This isn't movement\u2014it's the illusion of movement! We're spinning in place like a roulette wheel that never lands!",
+      "next": "cornelius_philosophy"
+    },
+    "cornelius_philosophy": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "character": "cornelius",
+      "character_image": "assets/images/characters/cornelius_sad.png",
+      "emotion": "sad",
+      "dialogue": "Every person you've met\u2014Moses, Mary, McCalister, Diego, Ling\u2014they're all you. Different aspects of your child's mind trying to process. 'Did mother die? Is it my fault? Can I fix it?' Each casino is a different answer to those questions.",
+      "next": "cornelius_chamber"
+    },
+    "cornelius_chamber": {
+      "type": "special_scene",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "text": "Cornelius produces a revolver\u2014it's your father's gun, perfectly preserved.",
+      "narration": "Cornelius: 'Six chambers. Six major choices. You spin the cylinder, but it always lands on the same chamber\u2014the one where you haven't decided yet. Russian roulette with fate. You're waiting for the bullet to tell you what to do.'",
+      "next": "cornelius_game"
+    },
+    "cornelius_game": {
+      "type": "game",
+      "bg": "assets/images/utilities/poker_table.png",
+      "game_type": "frozen_moment_roulette",
+      "special": "Six chambers representing six possible futures. Spin until you find the truth.",
+      "buy_in": 250,
+      "rounds": 6,
+      "chambers": [
+        "Mother dies",
+        "Father dies",
+        "You die",
+        "Everyone lives",
+        "Everyone dies",
+        "Nobody was ever here"
+      ],
+      "win": "cornelius_win",
+      "lose": "cornelius_lose"
+    },
+    "cornelius_win": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "character": "cornelius",
+      "character_image": "assets/images/characters/cornelius_sad.png",
+      "emotion": "sad",
+      "dialogue": "You found the empty chamber. The truth is: You haven't decided yet. You're not saving her, avenging her, or mourning her. You're frozen in the moment BEFORE all of that. Here's the steel token\u2014forged from indecision.",
+      "receive": "steel_token",
+      "items": [
+        "frozen_bullet",
+        "clock_stopped_at_7_32"
+      ],
+      "effects": {
+        "money": 500,
+        "respect": 45
+      },
+      "next": "cornelius_final"
+    },
+    "cornelius_final": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "character": "cornelius",
+      "character_image": "assets/images/characters/cornelius_normal.png",
+      "emotion": "normal",
+      "dialogue": "Before you go\u2014know this. Delilah Rose is next. She'll tell you everyone here is your mother. She's right. Every woman, every man, every stranger\u2014they're all Sarah Chance refracted through your guilt and love. Prepare yourself.",
+      "next": "loop_6_encounter"
+    },
+    "loop_6_encounter": {
+      "type": "special_scene",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "text": "Loop 6 You appears, older, wearing a conductor's uniform.",
+      "narration": "Loop 6 You: 'I tried to understand the system logically. Failed. Some truths can only be felt, not reasoned. Delilah will destroy you emotionally. Let her. It's necessary.'",
+      "next": "casino_7_enter"
+    },
+    "cornelius_lose": {
+      "type": "game_over",
+      "bg": "assets/images/casinos/iron_horse.png",
+      "text": "Wrong chamber. The bullet fires. You're dead in the frozen moment, killed by your own indecision. Time never resumes. You're a corpse experiencing eternity.",
+      "can_retry": true
+    },
+    "casino_7_enter": {
+      "type": "narration",
+      "bg": "assets/images/casinos/velvet_room.png",
+      "text": "Casino 7: The Velvet Room. Where love becomes weapon.",
+      "next": "delilah_1"
+    },
+    "delilah_1": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/velvet_room.png",
+      "character": "delilah_rose",
+      "character_image": "assets/images/characters/delilah_rose_normal.png",
+      "emotion": "normal",
+      "dialogue": "Welcome to the heart. I am every woman you've loved. Including your mother.",
+      "shifts_between": [
+        "scarlett",
+        "sarah",
+        "unknown_women"
+      ],
+      "choices": [
+        {
+          "text": "Did mother love me?",
+          "next": "delilah_2a",
+          "effects": {
+            "emotion": "sad",
+            "respect": 20
+          }
+        },
+        {
+          "text": "Love is why she died?",
+          "next": "delilah_2b",
+          "effects": {
+            "emotion": "normal",
+            "respect": 25
+          }
+        }
+      ]
+    },
+    "delilah_2a": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/velvet_room.png",
+      "character": "delilah_rose",
+      "character_image": "assets/images/characters/delilah_rose_sad.png",
+      "emotion": "sad",
+      "dialogue": "She loved you enough to die. To scatter across time. To become nothing.",
+      "next": "delilah_game"
+    },
+    "delilah_2b": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/velvet_room.png",
+      "character": "delilah_rose",
+      "character_image": "assets/images/characters/delilah_rose_normal.png",
+      "emotion": "normal",
+      "dialogue": "Love IS death here. Every trigger pulled is 'I love you too much.'",
+      "next": "delilah_game"
+    },
+    "delilah_game": {
+      "type": "game",
+      "bg": "assets/images/utilities/poker_table.png",
+      "game_type": "hearts_without_hearts",
+      "special": "If you feel love, you lose",
+      "guaranteed_loss": "Every card shows mother",
+      "win": "delilah_win",
+      "lose": "delilah_win"
+    },
+    "delilah_win": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/velvet_room.png",
+      "character": "delilah_rose",
+      "character_image": "assets/images/characters/delilah_rose_sad.png",
+      "emotion": "sad",
+      "dialogue": "Velvet token. Your mother isn't dead. She's IN you. You absorbed her at age 5.",
+      "receive": "velvet_token",
+      "effects": {
+        "money": 600,
+        "respect": 50
+      },
+      "revelation": "Every boss is mother filtered through guilt",
+      "next": "casino_8_enter"
+    },
+    "scarlett_c5_respect_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "respect < 0",
+          "next": "scarlett_c5_low_respect_death"
+        },
+        {
+          "condition": "respect >= 0",
+          "next": "scarlett_c5_opening"
+        }
+      ]
+    },
+    "scarlett_c5_low_respect_death": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/killing.png",
+      "emotion": "killing",
+      "dialogue": "You walk in here with hatred in your heart and disrespect on your tongue? In MY casino? Sweetheart, I've killed better men for less. But you? You're not even worth the bullet. Guards\u2014feed him to the desert.",
+      "next": "scarlett_c5_low_respect_death_2"
+    },
+    "scarlett_c5_low_respect_death_2": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/killing.png",
+      "text": "Scarlett snaps her fingers. Three men grab you. They drag you into the desert night. Your body is never found. Scarlett returns to her cards, dealing another hand as if you never existed.",
+      "can_retry": true
+    },
+    "scarlett_c5_opening": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Before we play, I need to know something. What do you think this place is? Really? Because everyone sees The Golden Nugget differently. Some see paradise. Some see hell. Me? I see a cage made of gold.",
+      "choices": [
+        {
+          "text": "It's a trap. A beautiful trap.",
+          "next": "scarlett_c5_trap_path",
+          "effects": {
+            "respect": 25
+          }
+        },
+        {
+          "text": "It's an opportunity. A chance to win big.",
+          "next": "scarlett_c5_opportunity_path",
+          "effects": {
+            "respect": 15
+          }
+        },
+        {
+          "text": "It's hell dressed in gold leaf and lies.",
+          "next": "scarlett_c5_hell_path",
+          "effects": {
+            "respect": 30,
+            "sanity": -5
+          }
+        },
+        {
+          "text": "It's just another casino. What's the big deal?",
+          "next": "scarlett_c5_dismissal_path",
+          "effects": {
+            "respect": 5
+          }
+        }
+      ]
+    },
+    "scarlett_c5_trap_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Smart. This place IS a trap. Gold-plated, velvet-lined, perfumed with expensive whiskey\u2014but still a trap. The question is: are YOU the mouse or the trapper? Because I've been both, honey. And neither ends well.",
+      "next": "scarlett_c5_trap_vision"
+    },
+    "scarlett_c5_trap_vision": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett gestures to the casino floor. You see it differently now\u2014the chandeliers are cages, the card tables are altars of sacrifice, the gold is dried blood.",
+      "narration": "Scarlett: 'Every person in this room is trapped. The gamblers bet their lives hoping to escape. The dealers work hoping to earn freedom. Me? I OWN this trap, and I'm more trapped than anyone. That's the sick joke of Perdition\u2014power is just a prettier prison.'",
+      "next": "scarlett_c5_backstory_1"
+    },
+    "scarlett_c5_opportunity_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Opportunity? Oh sweetheart, you're an optimist. I used to be like you. Saw every hand as winnable, every night as a fresh start. Then I learned the truth: in Perdition, the house ALWAYS wins. Always. You know why?",
+      "next": "scarlett_c5_opportunity_lesson"
+    },
+    "scarlett_c5_opportunity_lesson": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett deals three cards face-down.",
+      "narration": "Scarlett: 'Pick one. Any one. Your \"opportunity.\"' You flip a card\u2014it's blank. You flip another\u2014blank. The third? Also blank. 'See? In Perdition, every choice is empty. We just pretend there are opportunities to keep ourselves sane. But you're here now. So let's MAKE an opportunity. Even if it's fake.'",
+      "next": "scarlett_c5_backstory_1"
+    },
+    "scarlett_c5_hell_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/sad.png",
+      "emotion": "sad",
+      "dialogue": "Hell dressed in gold leaf and lies. That's... that's exactly it. You see clearly, [PLAYER_NAME]. Most people can't. The gold blinds them. The music deafens them. But you? You see the rot beneath the glamour. That makes you dangerous. Or valuable. Maybe both.",
+      "next": "scarlett_c5_hell_truth"
+    },
+    "scarlett_c5_hell_truth": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The casino's facade cracks. Behind the gold, you see chains. Behind the velvet, you see blood stains. Behind the music, you hear screaming.",
+      "narration": "Scarlett: 'This casino was built on the corpses of dreamers. Every brick is a broken promise. Every coin is a sold soul. And I'm the madam of this hell. Not by choice\u2014by debt. I owe the Four Aces everything. And they collect. Oh god, how they collect.'",
+      "next": "scarlett_c5_backstory_1"
+    },
+    "scarlett_c5_dismissal_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/angry.png",
+      "emotion": "angry",
+      "dialogue": "'Just another casino'? Are you BLIND? Or just stupid? This isn't some frontier saloon! This is where SOULS are currency! Fine. You want to play it casual? Let's play. But when you lose everything, don't say I didn't warn you.",
+      "next": "scarlett_c5_backstory_1"
+    },
+    "scarlett_c5_backstory_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "normal",
+      "dialogue": "You want to know my story? Fine. But stories have prices in Perdition. Answer me this first: If you could erase one person from your past\u2014make it so they never existed\u2014would you do it? And who would it be?",
+      "choices": [
+        {
+          "text": "I'd erase my father. He created this nightmare.",
+          "next": "scarlett_c5_father_choice",
+          "effects": {
+            "respect": 20,
+            "sanity": -5
+          }
+        },
+        {
+          "text": "I'd erase my mother. Her death started everything.",
+          "next": "scarlett_c5_mother_choice",
+          "effects": {
+            "respect": 15,
+            "sanity": -10
+          }
+        },
+        {
+          "text": "I'd erase myself. I'm the common thread in all this pain.",
+          "next": "scarlett_c5_self_choice",
+          "effects": {
+            "respect": 30,
+            "sanity": -15
+          }
+        },
+        {
+          "text": "I wouldn't erase anyone. The past made me who I am.",
+          "next": "scarlett_c5_acceptance_choice",
+          "effects": {
+            "respect": 25
+          }
+        }
+      ]
+    },
+    "scarlett_c5_father_choice": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/sad.png",
+      "emotion": "sad",
+      "dialogue": "Your father. Aldrich Chance. The man who broke time itself. I understand that rage. My father sold me to the Four Aces when I was sixteen. Said it was for 'opportunity.' Really, he just needed to pay his gambling debts. Men like our fathers? They don't deserve to be called human.",
+      "next": "scarlett_c5_revelation_branch"
+    },
+    "scarlett_c5_mother_choice": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/sad.png",
+      "emotion": "sad",
+      "dialogue": "Your mother. Sarah. The woman who chose to die. I knew her, you know. She came to this casino the night before she died. Played blackjack for six hours straight. Lost everything. Then she smiled and said, 'Good. Now I have nothing left to lose.' I didn't understand then. I do now.",
+      "next": "scarlett_c5_mother_revelation"
+    },
+    "scarlett_c5_self_choice": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "happy",
+      "dialogue": "Yourself. That's... wow. That's the most honest answer anyone's given me in fifteen years. Most people blame others. You blame yourself. That's either profound wisdom or complete madness. In Perdition, they're the same thing.",
+      "next": "scarlett_c5_self_revelation"
+    },
+    "scarlett_c5_acceptance_choice": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "normal",
+      "dialogue": "You accept your past. That takes strength. Or denial. Hard to tell which. But I respect it. The past made you? Fine. Let me tell you what the past made ME. Maybe you'll still respect it after.",
+      "next": "scarlett_c5_revelation_branch"
+    },
+    "scarlett_c5_mother_revelation": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett pulls out a faded photograph. It shows your mother, younger, smiling at a casino table. Next to her stands a young Scarlett\u2014barely twenty.",
+      "narration": "Scarlett: 'We were friends. For one night, at least. She told me about you. Said she loved you so much it was killing her. Literally. She said, \"Love in Perdition is poison. The only cure is death.\" I laughed. I don't laugh anymore.'",
+      "next": "scarlett_c5_revelation_branch"
+    },
+    "scarlett_c5_self_revelation": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett takes your hand. Her skin is ice cold.",
+      "narration": "Scarlett: 'You want to erase yourself? I tried that once. Took enough laudanum to kill a horse. Woke up three days later, alive and owned by the Ace of Hearts. He said, \"You can't die. I own your death. You only die when I allow it.\" That was twelve years ago. I'm still waiting for permission.'",
+      "next": "scarlett_c5_revelation_branch"
+    },
+    "scarlett_c5_revelation_branch": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/sad.png",
+      "emotion": "sad",
+      "dialogue": "Here's the truth about me: I'm not the boss of this casino. I'm its prisoner. The Ace of Hearts owns me\u2014body, soul, and every breath I take. Every card I deal, every smile I fake, every night I survive... it's because HE allows it. I'm a ghost pretending to be alive.",
+      "choices": [
+        {
+          "text": "Then let's kill the Ace of Hearts together.",
+          "next": "scarlett_c5_rebellion_path",
+          "effects": {
+            "respect": 40,
+            "sanity": -10
+          }
+        },
+        {
+          "text": "Why don't you just leave? Run away?",
+          "next": "scarlett_c5_naive_path",
+          "effects": {
+            "respect": 10
+          }
+        },
+        {
+          "text": "You've given up. You're already dead.",
+          "next": "scarlett_c5_cruel_path",
+          "effects": {
+            "respect": -20,
+            "sanity": -5
+          }
+        },
+        {
+          "text": "I'll find a way to free you. I promise.",
+          "next": "scarlett_c5_promise_path",
+          "effects": {
+            "respect": 35
+          }
+        }
+      ]
+    },
+    "scarlett_c5_rebellion_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/happy.png",
+      "emotion": "happy",
+      "dialogue": "Kill him? KILL HIM? Oh god, you're serious. You're actually serious. Nobody's ever... nobody's ever offered to do that for me. Everyone just pities me or uses me. But you? You want to SET ME FREE. Even if it means murder. That's either love or insanity.",
+      "next": "scarlett_c5_rebellion_plan"
+    },
+    "scarlett_c5_rebellion_plan": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett leans close, whispering urgently.",
+      "narration": "Scarlett: 'The Ace of Hearts will be at Casino 7. He's the final boss before you reach the loop's center. If you can kill him there, my contract breaks. I'll be free. But [PLAYER_NAME]\u2014he's not just a man. He's a PIECE of your father. Killing him means killing part of Aldrich. Can you do that? Can you kill your own father, piece by piece?'",
+      "next": "scarlett_c5_game_transition"
+    },
+    "scarlett_c5_naive_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/angry.png",
+      "emotion": "angry",
+      "dialogue": "Leave? LEAVE?! You think I haven't tried?! I've run fifty times! Each time, I wake up back in this casino with fresh scars and no memory of how I got them! The Ace of Hearts doesn't just own me\u2014he owns the CONCEPT of me! I can't leave! I'm not REAL outside these walls!",
+      "next": "scarlett_c5_naive_consequence"
+    },
+    "scarlett_c5_naive_consequence": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett pulls up her sleeve. Her arm is covered in identical scars, each one reading: 'PROPERTY OF HEARTS.'",
+      "narration": "Scarlett: 'Every time I run, he brands me again. Fifty brands. Fifty failures. Fifty deaths and fifty resurrections. I'm not a person anymore, [PLAYER_NAME]. I'm a playing card in the Ace of Hearts' deck. And he NEVER loses a card.'",
+      "next": "scarlett_c5_game_transition"
+    },
+    "scarlett_c5_cruel_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/killing.png",
+      "emotion": "killing",
+      "dialogue": "You think I'm DEAD? You think I've GIVEN UP?! I wake up every day in this hell and I CHOOSE to survive! That's not giving up, you heartless bastard! That's FIGHTING! Just because I can't escape doesn't mean I'm not TRYING!",
+      "next": "scarlett_c5_cruel_consequence"
+    },
+    "scarlett_c5_cruel_consequence": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett slaps you. Hard. The sound echoes through the casino. Everyone stops and stares.",
+      "narration": "Scarlett: 'Get out. Play your game, win your token, and GET OUT. I don't need your pity or your judgment. I need a goddamn miracle. And you're clearly not it.'",
+      "next": "scarlett_c5_game_transition"
+    },
+    "scarlett_c5_promise_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/sad.png",
+      "emotion": "sad",
+      "dialogue": "You promise to free me? Oh honey, don't make promises in Perdition. Promises are curses here. They bind you tighter than chains. But... but I appreciate the sentiment. Nobody's promised me anything in years. It's nice to pretend someone cares.",
+      "next": "scarlett_c5_promise_acceptance"
+    },
+    "scarlett_c5_promise_acceptance": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett kisses your cheek. It feels like ice and fire at once.",
+      "narration": "Scarlett: 'When you reach Casino 7, you'll meet the Ace of Hearts. He's cruel, charming, and utterly mad. He'll offer you a deal\u2014your freedom for my continued enslavement. Most people take it. If you don't... if you actually TRY to free me... well. Maybe promises aren't curses after all.'",
+      "next": "scarlett_c5_game_transition"
+    },
+    "scarlett_c5_game_transition": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Enough confessions. Let's play cards. The game is simple: Five Card Draw, but every card you draw shows a moment from your past. Win, and you control which memories stay. Lose, and I choose which ones you forget. High stakes. Are you ready?",
+      "next": "scarlett_c5_bet_check"
+    },
+    "scarlett_c5_bet_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "money >= 150",
+          "next": "scarlett_c5_bet_choice_full"
+        },
+        {
+          "condition": "money < 150",
+          "next": "scarlett_c5_bet_choice_poor"
+        }
+      ]
+    },
+    "scarlett_c5_bet_choice_full": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "sanity < 40",
+          "next": "scarlett_c5_bet_full_insane"
+        },
+        {
+          "condition": "sanity >= 40",
+          "next": "scarlett_c5_bet_full_sane"
+        }
+      ]
+    },
+    "scarlett_c5_bet_full_insane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/sad.png",
+      "emotion": "sad",
+      "dialogue": "Your mind is fractured, honey. I can see it in your eyes. You can't bet sanity you don't have. But you've got money... and you've got memories of me. Choose carefully.",
+      "choices": [
+        {
+          "text": "I bet $150. Money is meaningless anyway.",
+          "next": "scarlett_c5_bet_money",
+          "effects": {
+            "money": -150
+          }
+        },
+        {
+          "text": "I bet my memories of you. Maybe forgetting is easier.",
+          "next": "scarlett_c5_bet_memories",
+          "effects": {
+            "truth": -40
+          }
+        }
+      ]
+    },
+    "scarlett_c5_bet_full_sane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "normal",
+      "dialogue": "You've got options, sweetheart. Money, sanity, or memories. Each one costs something different. Each one reveals something different. What's it gonna be?",
+      "choices": [
+        {
+          "text": "I bet my sanity. Show me everything.",
+          "next": "scarlett_c5_bet_sanity",
+          "effects": {
+            "sanity": -25
+          }
+        },
+        {
+          "text": "I bet $150. Money is replaceable.",
+          "next": "scarlett_c5_bet_money",
+          "effects": {
+            "money": -150
+          }
+        },
+        {
+          "text": "I bet my memories of you. It's what you want, right?",
+          "next": "scarlett_c5_bet_memories",
+          "effects": {
+            "truth": -40
+          }
+        }
+      ]
+    },
+    "scarlett_c5_bet_choice_poor": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "sanity < 40",
+          "next": "scarlett_c5_bet_poor_insane"
+        },
+        {
+          "condition": "sanity >= 40",
+          "next": "scarlett_c5_bet_poor_sane"
+        }
+      ]
+    },
+    "scarlett_c5_bet_poor_insane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/sad.png",
+      "emotion": "sad",
+      "dialogue": "You're broke. Your mind is shattered. All you have left are memories of me. That's your only currency now. I'm sorry, honey. But the house needs payment.",
+      "choices": [
+        {
+          "text": "Take them. Take every memory. I don't care anymore.",
+          "next": "scarlett_c5_bet_memories",
+          "effects": {
+            "truth": -40
+          }
+        }
+      ]
+    },
+    "scarlett_c5_bet_poor_sane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "normal",
+      "dialogue": "You're broke, but you've still got your mind. And you've got memories. Choose what you're willing to lose.",
+      "choices": [
+        {
+          "text": "I bet my sanity. It's all I have left.",
+          "next": "scarlett_c5_bet_sanity",
+          "effects": {
+            "sanity": -25
+          }
+        },
+        {
+          "text": "I bet my memories of you. They hurt too much to keep.",
+          "next": "scarlett_c5_bet_memories",
+          "effects": {
+            "truth": -40
+          }
+        }
+      ]
+    },
+    "scarlett_c5_bet_sanity": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett deals the cards. Each one shows a memory: your mother's death, your father's madness, your first kill, your first kiss. The images burn into your mind.",
+      "narration": "You win the hand with a royal flush of trauma. But the cost\u2014the cost is seeing everything at once. Every moment of pain, layered infinitely. Scarlett slides the gold token across the table. 'Congratulations. You've won the right to remember everything forever.'",
+      "next": "scarlett_c5_win"
+    },
+    "scarlett_c5_bet_money": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett deals the cards. The game is fair\u2014she doesn't cheat. You win with a full house: three fathers, two mothers.",
+      "narration": "Scarlett smiles sadly. 'Money can't buy happiness, but it can buy survival. And in Perdition, that's close enough.' She pushes the gold token toward you. It's warm, like flesh.",
+      "next": "scarlett_c5_win"
+    },
+    "scarlett_c5_bet_memories": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Scarlett deals the cards. As you play, memories fade\u2014her smile, her voice, the way she saved you in the prologue. Everything dissolves.",
+      "narration": "You win the hand. But when you look at Scarlett, she's a stranger. 'Who are you?' you ask. She weeps silently and pushes the gold token across the table. 'Someone who doesn't matter anymore,' she whispers.",
+      "next": "scarlett_c5_win"
+    },
+    "scarlett_c5_win": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/friendly.png",
+      "emotion": "normal",
+      "dialogue": "You won. Take the gold token. And take this\u2014my locket. Inside is a photograph of me before Perdition. Back when I was human. If you free me at Casino 7, give it back. If not... keep it as a souvenir of a ghost.",
+      "receive": "gold_token",
+      "items": [
+        "scarlett_locket",
+        "heart_card_fragment"
+      ],
+      "effects": {
+        "money": 150,
+        "respect": 40
+      },
+      "next": "scarlett_c5_final"
+    },
+    "scarlett_c5_final": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SCARLETT",
+      "character_image": "assets/images/characters/scarlett/sad.png",
+      "emotion": "sad",
+      "dialogue": "Before you go\u2014remember this. The Ace of Hearts isn't evil. He's love twisted into obsession. He thinks he's protecting me by owning me. When you meet him, don't just fight with anger. Fight with understanding. That's how you'll win.",
+      "next": "casino_5_complete"
+    },
+    "casino_5_enter": {
+      "type": "narration",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Casino 5: The Jade Dragon. An opulent palace dripping with gold and blood money. Crystal chandeliers cast prismatic light across velvet tables. The air smells of whiskey, perfume, and desperation. This is where fortunes are made and souls are sold.",
+      "next": "scarlett_c5_intro"
+    },
+    "scarlett_c5_intro": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "SCARLETT sits at the dealer's table, shuffling cards with practiced grace. She's dressed in a golden evening gown that catches the chandelier light. But her eyes\u2014her eyes hold secrets darker than the night outside.",
+      "narration": "Scarlett: '[PLAYER_NAME]! What a surprise. Or is it? In this casino, nothing happens by accident. Every card is marked, every game is rigged, and every player... well, every player has a debt to pay. Even me. Especially you.'",
+      "next": "scarlett_c5_respect_check"
+    },
+    "ling_introduction": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "LING sits at a table carved from crystallized time. Her age shifts with each heartbeat\u2014child, maiden, crone, corpse, then child again. Around her neck hangs a necklace of moments that never happened.",
+      "narration": "Ling: 'Welcome, child of paradox. I am Ling, the Keeper of Unmade Futures. I deal in possibilities murdered before birth. I've been waiting for you across seventeen timelines. In twelve of them, you never arrived. In three, you killed me before I could speak. In two, we became lovers. And in this one... we play cards.'",
+      "next": "ling_respect_check"
+    },
+    "ling_respect_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "respect < 0",
+          "next": "ling_low_respect_death"
+        },
+        {
+          "condition": "respect >= 0",
+          "next": "ling_first_question"
+        }
+      ]
+    },
+    "ling_low_respect_death": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/killing.png",
+      "emotion": "killing",
+      "dialogue": "You walk into my temple with hatred poisoning your soul. Respect is not politeness\u2014it's recognition of power. You refuse to see mine. Let me educate you through extinction.",
+      "next": "ling_low_respect_death_2"
+    },
+    "ling_low_respect_death_2": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/killing.png",
+      "text": "Ling touches your forehead. You feel yourself branching\u2014splitting into every possible version of yourself across all timelines\u2014then collapsing into quantum foam. You become the absence where you once were. Nothing remembers you. Nothing ever will.",
+      "can_retry": true
+    },
+    "ling_first_question": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Before we begin, I must know: Do you believe in fate? Not as philosophy, but as iron law. Because in this casino, fate is the house, and the house always\u2014eventually\u2014wins. Unless you understand how to cheat.",
+      "choices": [
+        {
+          "text": "Fate is a lie. We create our own paths.",
+          "next": "ling_fate_denial",
+          "effects": {
+            "respect": 20
+          }
+        },
+        {
+          "text": "Fate is inevitable. We're all trapped.",
+          "next": "ling_fate_acceptance",
+          "effects": {
+            "respect": 15
+          }
+        },
+        {
+          "text": "Teach me how to cheat fate.",
+          "next": "ling_fate_rebellion",
+          "effects": {
+            "respect": 25
+          }
+        },
+        {
+          "text": "I don't care about fate. Where's the game?",
+          "next": "ling_fate_dismissal",
+          "effects": {
+            "respect": 5
+          }
+        }
+      ]
+    },
+    "ling_fate_denial": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Good. That anger will serve you. Every person who accepts fate becomes its slave. But those who deny it? They become its enemy. Enemies can fight back. Let me show you the battlefield.",
+      "next": "ling_battlefield_vision"
+    },
+    "ling_battlefield_vision": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Ling waves her hand. The casino dissolves. You stand on a plain of shattered timelines. Each shard reflects a different version of your life.",
+      "narration": "Ling: 'See that shard? You became a doctor and saved thousands. That one? You burned Perdition in righteous fury. That one? You died at age five from fever. Every possibility exists. Fate is the force that collapses them into one. You want to fight that? You must learn to walk between collapsed states\u2014to exist in probability.'",
+      "next": "ling_philosophy_1"
+    },
+    "ling_fate_acceptance": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Interesting. Most people lie to themselves about fate. They say they're free while chains drag behind them. You see the chains. That's wisdom. But wisdom without hope is just despair in a fancy hat.",
+      "next": "ling_chains_vision"
+    },
+    "ling_chains_vision": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Ling snaps her fingers. Golden chains appear around your wrists, ankles, neck. Each link is inscribed with a moment: 'Birth.' 'Mother's Death.' 'First Kill.' 'This Moment.'",
+      "narration": "Ling: 'These are your fate-chains. Forged from every choice that led you here. But here's the secret they don't tell you: chains can be reforged. Melted down. Made into weapons. Fate binds you, yes. But bound things can still fight. The question is\u2014will you?'",
+      "next": "ling_philosophy_1"
+    },
+    "ling_fate_rebellion": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/snorky.png",
+      "emotion": "happy",
+      "dialogue": "HA! Now THAT'S the spirit! Most people accept or deny. You want to CHEAT. Beautiful. Cheating fate is like cheating death\u2014technically possible, always temporary, and it costs everything you love. Still interested?",
+      "next": "ling_cheating_lesson"
+    },
+    "ling_cheating_lesson": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Ling produces three cards: The Fool, The Tower, and Death.",
+      "narration": "Ling: 'Cheating fate has three methods. The Fool's Way: pretend fate doesn't exist until it forgets about you\u2014low success rate, high comedy. The Tower's Way: shatter your timeline so completely that fate can't find you in the debris\u2014effective but lonely. The Death's Way: die before fate can claim you, then resurrect as something fate can't touch\u2014my personal favorite. Choose your method wisely.'",
+      "next": "ling_philosophy_1"
+    },
+    "ling_fate_dismissal": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/angry.png",
+      "emotion": "angry",
+      "dialogue": "Impatient. Like your father. He rushed through life and look where it got him\u2014fractured across time, crying in every moment simultaneously. Fine. We'll skip the philosophy. But don't cry when the cards eat your soul.",
+      "next": "ling_philosophy_1"
+    },
+    "ling_philosophy_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Now. Your mother, Sarah Chance. Do you want the truth about her death? Or the comfortable lie? Because I can give you either. The truth will destroy you. The lie will preserve you. Most people choose the lie.",
+      "choices": [
+        {
+          "text": "Give me the truth. All of it.",
+          "next": "ling_mother_truth",
+          "effects": {
+            "respect": 25,
+            "sanity": -10
+          }
+        },
+        {
+          "text": "Tell me the lie. I can't handle more truth.",
+          "next": "ling_mother_lie",
+          "effects": {
+            "respect": 10,
+            "sanity": 5
+          }
+        },
+        {
+          "text": "Give me both. I'll decide which is true.",
+          "next": "ling_mother_both",
+          "effects": {
+            "respect": 30,
+            "sanity": -15
+          }
+        },
+        {
+          "text": "I don't want to know. Let her rest.",
+          "next": "ling_mother_refusal",
+          "effects": {
+            "respect": 20
+          }
+        }
+      ]
+    },
+    "ling_mother_truth": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Ling's eyes turn black. The casino walls show moving images\u2014memories projected from the space between timelines.",
+      "narration": "You see: Your mother didn't die. She CHOSE to die. She stood before the Four Aces and said, 'Kill me. End this loop. My son will become a monster if I live, and a hero if I die.' The Aces refused\u2014said it was cruel. So she grabbed the Ace of Spades' gun and shot HERSELF. She committed suicide. But time broke from the paradox. Now she's both dead and alive, murdered and suicide, victim and volunteer. That's the truth. She killed herself to save you.",
+      "next": "ling_truth_response"
+    },
+    "ling_truth_response": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "sad",
+      "dialogue": "Does it hurt? Good. Truth should hurt. Comfortable truths are just lies wearing fancy dresses. Your mother loved you enough to erase herself. That's the weight you carry. Now\u2014will you honor that sacrifice? Or waste it?",
+      "next": "ling_revelation_1"
+    },
+    "ling_mother_lie": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Ling smiles gently. The casino glows with warm golden light.",
+      "narration": "Ling: 'Your mother died peacefully, saving a child from a runaway horse. She was a hero. Everyone loved her. She thought of you in her final moment and smiled. She felt no pain. She had no regrets. That's the lie. Comfortable, isn't it? Easy to carry. Light as air. And completely, utterly false. But if it helps you sleep, believe it.'",
+      "next": "ling_lie_comfort"
+    },
+    "ling_lie_comfort": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "There's no shame in choosing the lie. Most people do. Living with truth is like walking with broken glass in your shoes\u2014you can do it, but why would you? Keep the lie. Cherish it. But know this: when you meet the Aces, the lie will shatter. Truth always arrives eventually.",
+      "next": "ling_revelation_1"
+    },
+    "ling_mother_both": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Ling laughs\u2014the sound echoes across timelines. The casino splits in two\u2014one side shows light, one shows darkness.",
+      "narration": "Ling: 'Both? Brave. Stupid, but brave. Very well. The Truth: Your mother killed herself to break the loop. The Lie: Your mother died a hero saving others. Here's the twist\u2014both are true. She DID save others by dying. She DID kill herself. Suicide and sacrifice, murder and martyrdom, all at once. That's how time works when it breaks. Contradictions become fact. You exist because she died. She died so you could exist. A perfect loop of maternal horror.'",
+      "next": "ling_both_madness"
+    },
+    "ling_both_madness": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/angry.png",
+      "emotion": "angry",
+      "dialogue": "Holding two contradictory truths simultaneously\u2014philosophers call that enlightenment. Doctors call it psychosis. I call it Tuesday. Your mind will fracture trying to reconcile them. Good. Fractured minds see through time. Whole minds are trapped in the present. Consider it a gift.",
+      "next": "ling_revelation_1"
+    },
+    "ling_mother_refusal": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Respect for the dead. Noble. Rare. Your mother would appreciate that. Most children demand to know everything, as if the dead owe them answers. But the dead owe nothing. They've paid the ultimate price. Very well\u2014I'll honor your wish. Sarah Chance will remain a mystery.",
+      "next": "ling_revelation_1"
+    },
+    "ling_revelation_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "One more question before we play. The Four Aces\u2014Hearts, Diamonds, Clubs, Spades. You've met Diamonds and Clubs. Do you understand what they are yet? Or do you still think they're just people?",
+      "choices": [
+        {
+          "text": "They're aspects of my father, aren't they?",
+          "next": "ling_aces_truth",
+          "effects": {
+            "respect": 30
+          }
+        },
+        {
+          "text": "They're guardians of the loop.",
+          "next": "ling_aces_partial",
+          "effects": {
+            "respect": 20
+          }
+        },
+        {
+          "text": "They're just criminals and madmen.",
+          "next": "ling_aces_denial",
+          "effects": {
+            "respect": 5
+          }
+        },
+        {
+          "text": "I have no idea. Tell me.",
+          "next": "ling_aces_explanation",
+          "effects": {
+            "respect": 15
+          }
+        }
+      ]
+    },
+    "ling_aces_truth": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/snorky.png",
+      "emotion": "happy",
+      "dialogue": "CLEVER CHILD! Yes! They are Aldrich, fractured. Hearts: his love and madness. Diamonds: his observation and cruelty. Clubs: his order and violence. Spades: his death wish and truth. When time broke, your father split into four aspects. Each one trapped in their nature, unable to be whole. You're meeting him piece by piece.",
+      "next": "ling_aces_reveal"
+    },
+    "ling_aces_partial": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Close. They DO guard the loop. But they're not separate people. They're fragments of ONE person, shattered by temporal paradox. Guardians, yes. But also prisoners. They maintain the loop because they ARE the loop. Each one a different face of the same broken soul.",
+      "next": "ling_aces_reveal"
+    },
+    "ling_aces_denial": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/angry.png",
+      "emotion": "angry",
+      "dialogue": "Criminals? MADMEN? You dense child. They're your FATHER. Aldrich Chance, split into four when time shattered. Every casino is a piece of him. Every boss is his fractured psyche. You're not fighting strangers\u2014you're fighting dad. And eventually, you'll have to kill him. All four pieces.",
+      "next": "ling_aces_reveal"
+    },
+    "ling_aces_explanation": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Honesty. Refreshing. Very well: The Four Aces are your father, Aldrich Chance. When your mother died, the temporal paradox split him into four aspects. Hearts: love. Diamonds: intellect. Clubs: control. Spades: death. Each one runs a casino. Each one is incomplete. You're collecting pieces of your father with every token you win.",
+      "next": "ling_aces_reveal"
+    },
+    "ling_aces_reveal": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Ling produces a mirror. In it, you see Aldrich's face\u2014but it keeps splitting, fragmenting into four distinct people, then reforming.",
+      "narration": "Ling: 'By the time you reach Casino 9, you'll have met all four Aces. Then comes the choice: reassemble your father and face him whole? Or leave him fractured and escape alone? Either way, someone dies. Maybe him. Maybe you. Maybe both. The loop hungers for sacrifice.'",
+      "next": "ling_game_intro"
+    },
+    "ling_game_intro": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Now we play. Quantum Poker. Each card represents a possible future. You bet on which timeline you want to inhabit. Win, and you control your fate. Lose, and you become probability\u2014existing and not existing forever. The stakes? Your soul, your sanity, or your memories. Choose your wager carefully.",
+      "next": "ling_bet_check"
+    },
+    "ling_bet_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "money >= 150",
+          "next": "ling_bet_choice_full"
+        },
+        {
+          "condition": "money < 150",
+          "next": "ling_bet_choice_poor"
+        }
+      ]
+    },
+    "ling_bet_choice_full": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "sanity < 40",
+          "next": "ling_bet_choice_full_insane"
+        },
+        {
+          "condition": "sanity >= 40",
+          "next": "ling_bet_choice_full_normal"
+        }
+      ]
+    },
+    "ling_bet_choice_full_insane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "Your mind is fractured beyond repair. You cannot bet sanity you don't have. Choose money or memories\u2014both are painful currencies.",
+      "choices": [
+        {
+          "text": "I bet $150. Let's play.",
+          "next": "ling_bet_money",
+          "effects": {
+            "money": -150
+          }
+        },
+        {
+          "text": "I bet my memories of Scarlett.",
+          "next": "ling_bet_memories",
+          "effects": {
+            "truth": -40
+          }
+        }
+      ]
+    },
+    "ling_bet_choice_full_normal": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "What will you wager on your future?",
+      "choices": [
+        {
+          "text": "I bet my sanity. Show me all the timelines.",
+          "next": "ling_bet_sanity",
+          "effects": {
+            "sanity": -25
+          }
+        },
+        {
+          "text": "I bet $150. Let's play.",
+          "next": "ling_bet_money",
+          "effects": {
+            "money": -150
+          }
+        },
+        {
+          "text": "I bet my memories of Scarlett.",
+          "next": "ling_bet_memories",
+          "effects": {
+            "truth": -40
+          }
+        }
+      ]
+    },
+    "ling_bet_choice_poor": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "sanity < 40",
+          "next": "ling_bet_choice_poor_insane"
+        },
+        {
+          "condition": "sanity >= 40",
+          "next": "ling_bet_choice_poor_normal"
+        }
+      ]
+    },
+    "ling_bet_choice_poor_insane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "You're broke. Your mind is shattered. All you have left are memories. That's what you must bet. There is no other way.",
+      "choices": [
+        {
+          "text": "Take my memories. I want to forget everything.",
+          "next": "ling_bet_memories",
+          "effects": {
+            "truth": -40
+          }
+        }
+      ]
+    },
+    "ling_bet_choice_poor_normal": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "You lack the money to play. But there are other currencies in Perdition. Your sanity, or your most precious memories. Choose.",
+      "choices": [
+        {
+          "text": "I bet my sanity. Show me all the timelines.",
+          "next": "ling_bet_sanity",
+          "effects": {
+            "sanity": -25
+          }
+        },
+        {
+          "text": "I bet my memories of Scarlett.",
+          "next": "ling_bet_memories",
+          "effects": {
+            "truth": -40
+          }
+        }
+      ]
+    },
+    "ling_bet_sanity": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The cards are dealt. Each one shows a different version of you. You see them all at once\u2014every timeline, every choice, every death.",
+      "narration": "You win. But your mind splinters under the weight of infinite possibility. You see your mother die in a thousand ways. You see yourself as killer, victim, hero, coward. The gold token materializes, but it feels hollow.",
+      "next": "ling_win"
+    },
+    "ling_bet_money": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The cards are dealt. Ling plays fairly\u2014she doesn't need to cheat. You win with a royal flush that exists across three timelines simultaneously.",
+      "narration": "Ling nods with approval. 'Money is temporary. But a fair win is eternal.' She slides the gold token across the table. It hums with temporal energy.",
+      "next": "ling_win"
+    },
+    "ling_bet_memories": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The cards are dealt. As you play, memories of Scarlett fade like morning mist. Her voice, her face, her warmth\u2014all dissolve.",
+      "narration": "You win the hand. But when you try to remember why you started this journey, there's only emptiness. Ling pushes the gold token toward you. 'You traded love for victory. The Perdition way.'",
+      "next": "ling_win"
+    },
+    "ling_win": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/friendly.png",
+      "emotion": "normal",
+      "dialogue": "You've won. Take the gold token. And this\u2014a quantum coin. Flip it, and it lands on both sides simultaneously. That's your future: everything and nothing at once.",
+      "receive": "gold_token",
+      "items": [
+        "quantum_coin",
+        "timeline_map"
+      ],
+      "effects": {
+        "money": 150,
+        "respect": 40
+      },
+      "next": "ling_final"
+    },
+    "ling_final": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "LING",
+      "character_image": "assets/images/characters/ling/snorky.png",
+      "emotion": "sad",
+      "dialogue": "Before you leave\u2014know this. Breaking the loop means choosing one timeline and killing all the others. Every version of you that could have been will die. Are you willing to murder infinite possibilities for one truth?",
+      "next": "casino_4_complete"
+    },
+    "casino_5_complete": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You leave The Jade Dragon. Behind you, Scarlett returns to dealing cards, smiling her fake smile, living her half-life.",
+      "narration": "As you step into the desert night, you hear her whisper: 'Please don't forget me. Even if you bet away the memories. Please don't forget.'",
+      "next": "casino_5_return_map"
+    },
+    "casino_5_return_map": {
+      "type": "system",
+      "action": "return_to_map",
+      "unlock": "casino_6"
+    }
+  },
+  "screens_part3": {
+    "casino_8_enter": {
+      "type": "narration",
+      "bg": "assets/images/casinos/crystal_crown.png",
+      "text": "Casino 8: The Crystal Crown. Ice palace in desert, frozen at September 12, 1785.",
+      "next": "baron_1"
+    },
+    "baron_1": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/crystal_crown.png",
+      "character": "baron",
+      "character_image": "assets/images/characters/baron_normal.png",
+      "emotion": "normal",
+      "dialogue": "I don't belong in your psychological drama. I'm from someone else's guilt.",
+      "choices": [
+        {
+          "text": "Then why are you here?",
+          "next": "baron_2a",
+          "effects": {
+            "emotion": "normal",
+            "respect": 20
+          }
+        },
+        {
+          "text": "Tell me what you've seen",
+          "next": "baron_2b",
+          "effects": {
+            "emotion": "sad",
+            "respect": 25
+          }
+        }
+      ]
+    },
+    "baron_2a": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/crystal_crown.png",
+      "character": "baron",
+      "character_image": "assets/images/characters/baron_normal.png",
+      "emotion": "normal",
+      "dialogue": "Your father pulled me from another timeline as punishment. But I've watched from outside.",
+      "next": "baron_revelation"
+    },
+    "baron_2b": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/crystal_crown.png",
+      "character": "baron",
+      "character_image": "assets/images/characters/baron_sad.png",
+      "emotion": "sad",
+      "dialogue": "You already won. Already saved her. Created all this to justify what you did.",
+      "next": "baron_revelation"
+    },
+    "baron_revelation": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/crystal_crown.png",
+      "character": "baron",
+      "character_image": "assets/images/characters/baron_normal.png",
+      "emotion": "normal",
+      "dialogue": "Look - the night before the murder. Your parents dancing, happy. But watch...",
+      "special": "Melts frozen figure",
+      "reveal": "Scarlett was there, watching with hatred",
+      "next": "baron_game"
+    },
+    "baron_game": {
+      "type": "game",
+      "bg": "assets/images/utilities/poker_table.png",
+      "game_type": "perfect_information_poker",
+      "special": "See all cards, all outcomes",
+      "paradox": "Every perfect play = mother dies",
+      "win": "baron_win",
+      "lose": "baron_lose"
+    },
+    "baron_win": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/crystal_crown.png",
+      "character": "baron",
+      "character_image": "assets/images/characters/baron_sad.png",
+      "emotion": "sad",
+      "dialogue": "Crystal token. Perfection is the enemy of truth. Truth is messy.",
+      "receive": "crystal_token",
+      "effects": {
+        "money": 700,
+        "respect": 55
+      },
+      "next": "casino_9_enter"
+    },
+    "baron_lose": {
+      "type": "game_over",
+      "bg": "assets/images/casinos/crystal_crown.png",
+      "text": "Frozen in time forever. Another ice statue.",
+      "can_retry": true
+    },
+    "casino_9_enter": {
+      "type": "narration",
+      "bg": "assets/images/casinos/midnight_oil.png",
+      "text": "Casino 9: The Midnight Oil. Library where books write themselves.",
+      "next": "professor_1"
+    },
+    "professor_1": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/midnight_oil.png",
+      "character": "professor",
+      "character_image": "assets/images/characters/professor_normal.png",
+      "emotion": "normal",
+      "dialogue": "I'm reading our conversation from a book writing itself. Infinite recursion.",
+      "choices": [
+        {
+          "text": "My mother is alive",
+          "next": "professor_2a",
+          "effects": {
+            "emotion": "happy",
+            "respect": 30
+          }
+        },
+        {
+          "text": "I am the killer",
+          "next": "professor_2b",
+          "effects": {
+            "emotion": "sad",
+            "respect": 35
+          }
+        },
+        {
+          "text": "None of this is real",
+          "next": "professor_2c",
+          "effects": {
+            "emotion": "normal",
+            "respect": 40
+          }
+        }
+      ]
+    },
+    "professor_2a": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/midnight_oil.png",
+      "character": "professor",
+      "character_image": "assets/images/characters/professor_happy.png",
+      "emotion": "happy",
+      "dialogue": "You spoke it, so it becomes true. She appears, confused, aged.",
+      "reality_rewrite": "mother_lives",
+      "next": "professor_game"
+    },
+    "professor_2b": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/midnight_oil.png",
+      "character": "professor",
+      "character_image": "assets/images/characters/professor_sad.png",
+      "emotion": "sad",
+      "dialogue": "The gun appears in your 5-year-old hands, smoking.",
+      "reality_rewrite": "self_guilt",
+      "next": "professor_game"
+    },
+    "professor_2c": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/midnight_oil.png",
+      "character": "professor",
+      "character_image": "assets/images/characters/professor_normal.png",
+      "emotion": "normal",
+      "dialogue": "Everything flickers. You see code. You're in a game.",
+      "reality_rewrite": "simulation",
+      "next": "professor_game"
+    },
+    "professor_game": {
+      "type": "game",
+      "bg": "assets/images/utilities/poker_table.png",
+      "game_type": "story_poker",
+      "special": "Whatever hand you play becomes history",
+      "the_real_ending": "Book is blank - not written yet",
+      "win": "professor_win",
+      "lose": "professor_lose"
+    },
+    "professor_win": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/midnight_oil.png",
+      "character": "professor",
+      "character_image": "assets/images/characters/professor_normal.png",
+      "emotion": "normal",
+      "dialogue": "Obsidian token. You're writing this as a 5-year-old with a gun.",
+      "receive": "obsidian_token",
+      "effects": {
+        "money": 800,
+        "respect": 65
+      },
+      "next": "casino_10_enter"
+    },
+    "professor_lose": {
+      "type": "game_over",
+      "bg": "assets/images/casinos/midnight_oil.png",
+      "text": "Written out of existence. Your story ends unfinished.",
+      "can_retry": true
+    },
+    "casino_10_enter": {
+      "type": "narration",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "text": "Casino 10: The Pharaoh's Palace. The final truth awaits.",
+      "music": "final_revelation.mp3",
+      "next": "palace_interior"
+    },
+    "palace_interior": {
+      "type": "narration",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "text": "Empty except for a mirror. In it: You at 5 with gun. Mother reaching. Father screaming.",
+      "next": "mirror_revelation"
+    },
+    "mirror_revelation": {
+      "type": "special_scene",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "revelation": "Every character you met is YOU",
+      "list": [
+        "Widow = Your guilt",
+        "Colonel = Your pride",
+        "Texas = Your violence",
+        "Diego = Your faith",
+        "Ling = Your possibility",
+        "Cornelius = Your logic",
+        "Delilah = Your love",
+        "Baron = Your outsider",
+        "Professor = Your knowledge"
+      ],
+      "next": "father_appears"
+    },
+    "father_appears": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "character": "aldrich",
+      "character_image": "assets/images/characters/aldrich_sad.png",
+      "emotion": "sad",
+      "dialogue": "Hello, son. I've been dealing your hand for fifteen years.",
+      "narration": "He turns. YOUR FACE, thirty years older.",
+      "next": "father_talk_1"
+    },
+    "father_talk_1": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "character": "aldrich",
+      "character_image": "assets/images/characters/aldrich_sad.png",
+      "emotion": "sad",
+      "dialogue": "Every casino in Perdition, I built hoping you'd find me. After your mother died, you vanished.",
+      "choices": [
+        {
+          "text": "You killed her!",
+          "next": "father_accusation",
+          "effects": {
+            "emotion": "angry",
+            "respect": 20
+          }
+        },
+        {
+          "text": "Who really killed her?",
+          "next": "father_truth",
+          "effects": {
+            "emotion": "normal",
+            "respect": 30
+          }
+        },
+        {
+          "text": "I missed you, father",
+          "next": "father_emotional",
+          "effects": {
+            "emotion": "happy",
+            "respect": 25
+          }
+        },
+        {
+          "text": "[Draw your gun]",
+          "next": "father_violence",
+          "effects": {
+            "emotion": "sad",
+            "respect": -20
+          }
+        }
+      ]
+    },
+    "father_accusation": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "character": "aldrich",
+      "character_image": "assets/images/characters/aldrich_angry.png",
+      "emotion": "angry",
+      "dialogue": "I loved Sarah more than life! I killed six men I thought responsible. But the real killer...",
+      "next": "marcus_enters"
+    },
+    "father_truth": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "character": "aldrich",
+      "character_image": "assets/images/characters/aldrich_normal.png",
+      "emotion": "normal",
+      "dialogue": "Someone who wanted to hurt me by taking what I loved. Someone who knew our routines...",
+      "next": "marcus_enters"
+    },
+    "father_emotional": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "character": "aldrich",
+      "character_image": "assets/images/characters/aldrich_happy.png",
+      "emotion": "happy",
+      "dialogue": "My boy... I failed your mother. I won't fail you. Together we can\u2014",
+      "next": "marcus_enters"
+    },
+    "father_violence": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "character": "aldrich",
+      "character_image": "assets/images/characters/aldrich_sad.png",
+      "emotion": "sad",
+      "dialogue": "[You shoot. He bleeds but doesn't die] Go ahead... but know the real killer is still here...",
+      "next": "marcus_enters"
+    },
+    "marcus_enters": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "character": "marcus",
+      "character_image": "assets/images/characters/marcus_happy.png",
+      "emotion": "happy",
+      "dialogue": "How touching. Father and son reunited. You played your part perfectly.",
+      "narration": "Sheriff Marcus Crown enters with armed men.",
+      "next": "marcus_revelation"
+    },
+    "marcus_revelation": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "character": "marcus",
+      "character_image": "assets/images/characters/marcus_happy.png",
+      "emotion": "happy",
+      "dialogue": "I'm Aldrich's brother. Your uncle. I killed Sarah to break him. Fifteen years of planning.",
+      "next": "marcus_revelation_2"
+    },
+    "marcus_revelation_2": {
+      "type": "dialogue",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "character": "marcus",
+      "character_image": "assets/images/characters/marcus_normal.png",
+      "emotion": "normal",
+      "dialogue": "With him dead and you blamed, I inherit everything. The perfect crime.",
+      "next": "final_choice"
+    },
+    "final_choice": {
+      "type": "critical_choice",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "dialogue": "The moment of truth. Who do you stand with?",
+      "choices": [
+        {
+          "text": "Stand with Father",
+          "next": "ending_father",
+          "effects": {
+            "respect": 50
+          }
+        },
+        {
+          "text": "Stand alone",
+          "next": "ending_alone",
+          "effects": {
+            "respect": 40
+          }
+        },
+        {
+          "text": "Join Marcus",
+          "next": "ending_marcus",
+          "effects": {
+            "respect": -50
+          }
+        },
+        {
+          "text": "Shoot yourself",
+          "next": "ending_sacrifice",
+          "effects": {
+            "respect": 60
+          }
+        },
+        {
+          "text": "Realize the truth",
+          "next": "ending_truth",
+          "requirements": "all_tokens",
+          "effects": {
+            "respect": 100
+          }
+        }
+      ]
+    },
+    "ending_father": {
+      "type": "ending",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "title": "Blood and Gold",
+      "text": "You and Aldrich fight together. Marcus dies. You inherit half the empire and reconcile with your father.",
+      "achievement": "Family Reunion",
+      "appears": true,
+      "dialogue": "I knew you'd choose him. Blood always tells.",
+      "final_image": "assets/images/casinos/pharaohs_palace.png"
+    },
+    "ending_alone": {
+      "type": "ending",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "title": "Ashes to Ashes",
+      "text": "You fight everyone. Both brothers die. You burn Perdition to free everyone from the cycle.",
+      "achievement": "Broken Chains",
+      "appears": true,
+      "dialogue": "Finally. Someone strong enough to end it all.",
+      "final_image": "assets/images/casinos/pharaohs_palace.png"
+    },
+    "ending_marcus": {
+      "type": "ending",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "title": "The House Always Wins",
+      "text": "You betray Aldrich. Marcus betrays you. You kill Marcus and become the new tyrant.",
+      "achievement": "New Management",
+      "appears": false,
+      "final_image": "assets/images/casinos/pharaohs_palace.png"
+    },
+    "ending_sacrifice": {
+      "type": "ending",
+      "bg": "assets/images/casinos/pharaohs_palace.png",
+      "title": "The Noble Sacrifice",
+      "text": "You shoot yourself. Parents reconcile over your body. You become the bullet traveling through time.",
+      "achievement": "Eternal Bullet",
+      "appears": true,
+      "dialogue": "You chose the hardest path. I'll remember you.",
+      "final_image": "assets/images/casinos/pharaohs_palace.png"
+    },
+    "ending_truth": {
+      "type": "ending",
+      "bg": "assets/images/prologue/train_station_town_view.png",
+      "title": "The Ultimate Truth",
+      "text": "You're 5 years old. Gun in hand. Mother reaching. This entire game happened in one second of a child's mind.",
+      "revelation": "You drop the gun. Parents divorce but live. Perdition never existed except in your imagination.",
+      "achievement": "Awakening",
+      "special_scene": "reality_returns",
+      "next": "true_ending_dialogue"
+    },
+    "true_ending_dialogue": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/train_station_town_view.png",
+      "character": "sarah",
+      "character_image": "assets/images/characters/sarah_happy.png",
+      "emotion": "happy",
+      "dialogue": "{{player_name}}? Honey, put the gun down. Everything's going to be okay.",
+      "next": "true_ending_2"
+    },
+    "true_ending_2": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/train_station_town_view.png",
+      "character": "aldrich",
+      "character_image": "assets/images/characters/aldrich_sad.png",
+      "emotion": "sad",
+      "dialogue": "Son, I'm sorry you had to see us fight. We love you, no matter what happens between us.",
+      "next": "true_ending_final"
+    },
+    "true_ending_final": {
+      "type": "narration",
+      "bg": "assets/images/prologue/train_station_looking_up.png",
+      "text": "You drop the gun. Your parents separate but both survive. Years later, you become a writer, turning your childhood trauma into stories. Perdition exists only on paper, where it can hurt no one.",
+      "final_message": "Sometimes the bravest thing is to put down the weapon and choose life.",
+      "achievement": "The Real Victory",
+      "the_end": true
+    },
+    "final_appearance": {
+      "type": "epilogue",
+      "bg": "assets/images/prologue/train_station_scarlett.png",
+      "character": "scarlett",
+      "character_image": "assets/images/characters/sad.png",
+      "emotion": "sad",
+      "dialogue": "Every loop, I wait for you. I am your guilt, your love, your regret. And now... I'm free too.",
+      "condition": "any_ending_except_marcus",
+      "fade_out": true
+    }
+  },
+  "game_stats": {
+    "total_screens": 157,
+    "total_choices": 89,
+    "total_games": 10,
+    "total_endings": 5,
+    "total_deaths": 10,
+    "loops_possible": "infinite",
+    "truth_revelations": 23,
+    "character_emotions": 4,
+    "tokens_required": 10
+  },
+  "achievement_list": [
+    "First Death",
+    "Loop Breaker",
+    "All Tokens Collected",
+    "Truth Seeker",
+    "Family Reunion",
+    "Broken Chains",
+    "New Management",
+    "Eternal Bullet",
+    "Awakening",
+    "The Real Victory",
+    "Scarlett's Love",
+    "Every Ending Seen",
+    "Perfect Run",
+    "Never Died",
+    "Maximum Respect"
+  ]
+}
