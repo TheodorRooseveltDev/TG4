@@ -660,10 +660,12 @@
       "next": "game_over_sheriff"
     },
     "game_over_sheriff": {
-      "type": "system",
-      "action": "game_over",
-      "message": "KILLED BY SHERIFF MCCALISTER\n\n'In the temporal casinos, death is just another loss. The wheel spins again.'\n\nRespect is everything in the Wild West. Without it, you're already dead.",
-      "restart": true
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "SHERIFF MCCALISTER",
+      "character_image": "assets/images/characters/sherif/killing.png",
+      "text": "Sheriff McCalister draws his revolver faster than you can blink. The gunshot echoes through the casino. As you fall, you see him holstering his weapon with cold efficiency. 'Respect is everything in the Wild West. Without it, you're already dead.' Your vision fades to black.",
+      "can_retry": true
     },
     "sheriff_neutral_1": {
       "type": "dialogue",

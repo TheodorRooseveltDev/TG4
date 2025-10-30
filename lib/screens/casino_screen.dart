@@ -277,6 +277,12 @@ class _CasinoScreenState extends ConsumerState<CasinoScreen>
     final nextSceneId = currentScene['next'] as String?;
     final sceneType = currentScene['type'] as String?;
     
+    // Handle game over scenes
+    if (sceneType == 'game_over') {
+      _handleGameOver(currentScene);
+      return;
+    }
+    
     // Handle special system actions
     if (sceneType == 'system') {
       final action = currentScene['action'] as String?;
@@ -289,9 +295,6 @@ class _CasinoScreenState extends ConsumerState<CasinoScreen>
         }
         // Show rewards screen then return to map
         _showRewardsAndReturn();
-        return;
-      } else if (action == 'game_over') {
-        _handleGameOver(currentScene);
         return;
       }
     }
@@ -361,66 +364,107 @@ class _CasinoScreenState extends ConsumerState<CasinoScreen>
   }
   
   void _handleGameOver(Map<String, dynamic> scene) {
-    final message = scene['message'] as String? ?? 'GAME OVER';
+    final deathText = scene['text'] as String? ?? scene['message'] as String? ?? 'GAME OVER';
+    final characterImage = scene['character_image'] as String?;
+    final canRetry = scene['can_retry'] as bool? ?? true;
     
-    // Show game over dialog
+    // Show full-screen game over with character image
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (context) => WillPopScope(
         onWillPop: () async => false,
-        child: Dialog(
-          backgroundColor: Colors.transparent,
-          child: Container(
-            padding: const EdgeInsets.all(32),
-            decoration: BoxDecoration(
-              image: const DecorationImage(
-                image: AssetImage('assets/images/utilities/dialogs_bg.png'),
-                fit: BoxFit.fill,
+        child: Scaffold(
+          backgroundColor: Colors.black,
+          body: Stack(
+            children: [
+              // Character image in background (killing.png)
+              if (characterImage != null)
+                Positioned.fill(
+                  child: Opacity(
+                    opacity: 0.4,
+                    child: Image.asset(
+                      characterImage,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        print('Error loading death image: $characterImage - $error');
+                        return Container(color: Colors.black);
+                      },
+                    ),
+                  ),
+                ),
+              
+              // Death message overlay
+              Center(
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 32),
+                  padding: const EdgeInsets.all(32),
+                  decoration: BoxDecoration(
+                    image: const DecorationImage(
+                      image: AssetImage('assets/images/utilities/dialogs_bg.png'),
+                      fit: BoxFit.fill,
+                    ),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // "YOU DIED" title
+                      Text(
+                        'YOU DIED',
+                        style: WesternTextStyles.title(
+                          fontSize: 32,
+                          color: const Color(0xFF8B0000),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 24),
+                      
+                      // Death description
+                      Text(
+                        deathText.replaceAll('[PLAYER_NAME]', ref.read(gameStateProvider).playerStats.name),
+                        style: WesternTextStyles.dialogue(
+                          fontSize: 16,
+                          color: const Color(0xFF2C1810),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 32),
+                      
+                      // Restart button
+                      if (canRetry)
+                        GestureDetector(
+                          onTap: () {
+                            // Close dialog and return to map
+                            Navigator.of(context).pop(); // Close dialog
+                            Navigator.of(context).pop(); // Close casino
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 32,
+                              vertical: 14,
+                            ),
+                            decoration: BoxDecoration(
+                              image: const DecorationImage(
+                                image: AssetImage('assets/images/utilities/buttons.png'),
+                                fit: BoxFit.fill,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Text(
+                              'RETURN TO MAP',
+                              style: WesternTextStyles.dialogue(
+                                fontSize: 18,
+                                color: const Color(0xFFF5E6D3),
+                              ),
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
               ),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  message,
-                  style: WesternTextStyles.title(
-                    fontSize: 18,
-                    color: const Color(0xFF8B0000),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 32),
-                GestureDetector(
-                  onTap: () {
-                    // Restart: Go back to menu/map
-                    Navigator.of(context).pop(); // Close dialog
-                    Navigator.of(context).pop(); // Close casino
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 32,
-                      vertical: 14,
-                    ),
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage('assets/images/utilities/buttons.png'),
-                        fit: BoxFit.fill,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      'RESTART',
-                      style: WesternTextStyles.dialogue(
-                        fontSize: 18,
-                        color: const Color(0xFFF5E6D3),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            ],
           ),
         ),
       ),
