@@ -46,7 +46,7 @@
       "character": "scarlett",
       "character_image": "assets/images/characters/scarlett/friendly.png",
       "emotion": "friendly",
-      "dialogue": "[PLAYER_NAME]... I like it. Has a certain ring to it. The name's Scarlett. Scarlett Rose. Welcome to Perdition Station. Behind us, ten casinos await - each one holding its own secrets and opportunities. Something tells me you didn't end up here by accident. Welcome aboard, [PLAYER_NAME]. Let's see what fate has in store for you.",
+      "dialogue": "[PLAYER_NAME]... I like it. Wait - let me see your face again... Of course. You're a Chance. I can see it in your eyes - that same desperate hope your mother Sarah had. Welcome, [PLAYER_NAME] Chance. Everyone in Perdition knows the Chance family. Behind us, the casinos await - each one holding its own secrets and opportunities. Let's see what fate has in store for you.",
       "next": "scarlett_casino_1_intro"
     },
     "scarlett_casino_1_intro": {
@@ -532,7 +532,7 @@
     "sheriff_1": {
       "type": "dialogue",
       "bg": "assets/images/prologue/dialogue.png",
-      "character": "SHERIFF MCCALISTER",
+      "character": "SHERIFF MARCUS MCCALISTER",
       "character_image": "assets/images/characters/sherif/normal.png",
       "emotion": "normal",
       "dialogue": "Well, well. Fresh meat at The Broken Spoke. I'm Sheriff McCal ister. This here's MY territory, and every soul that walks through that door owes me a tax. You got the copper token from Moose's casino, I see.",
@@ -543,15 +543,15 @@
       "type": "respect_branch",
       "branches": [
         {
-          "condition": "respect < 10",
+          "condition": "respect < 50",
           "next": "sheriff_disrespect_1"
         },
         {
-          "condition": "respect >= 10 && respect < 30",
+          "condition": "respect >= 50 && respect < 80",
           "next": "sheriff_neutral_1"
         },
         {
-          "condition": "respect >= 30",
+          "condition": "respect >= 80",
           "next": "sheriff_respect_1"
         }
       ]
@@ -662,7 +662,7 @@
     "game_over_sheriff": {
       "type": "game_over",
       "bg": "assets/images/prologue/dialogue.png",
-      "character": "SHERIFF MCCALISTER",
+      "character": "SHERIFF MARCUS MCCALISTER",
       "character_image": "assets/images/characters/sherif/killing.png",
       "text": "Sheriff McCalister draws his revolver faster than you can blink. The gunshot echoes through the casino. As you fall, you see him holstering his weapon with cold efficiency. 'Respect is everything in the Wild West. Without it, you're already dead.' Your vision fades to black.",
       "can_retry": true
@@ -670,7 +670,7 @@
     "sheriff_neutral_1": {
       "type": "dialogue",
       "bg": "assets/images/prologue/dialogue.png",
-      "character": "SHERIFF MCCALISTER",
+      "character": "SHERIFF MARCUS MCCALISTER",
       "character_image": "assets/images/characters/sherif/normal.png",
       "emotion": "normal",
       "dialogue": "I hear Moose gave you that token. He's got good judgment, usually. So I'll give you a chance to prove yourself, [PLAYER_NAME]. But step carefully. This casino isn't like Moose's little card parlor.",
@@ -680,7 +680,7 @@
     "sheriff_respect_1": {
       "type": "dialogue",
       "bg": "assets/images/prologue/dialogue.png",
-      "character": "SHERIFF MCCALISTER",
+      "character": "SHERIFF MARCUS MCCALISTER",
       "character_image": "assets/images/characters/sherif/listening.png",
       "emotion": "happy",
       "dialogue": "Word travels fast in these parts. They say you handled yourself well at The Dusty Dollar. Moose doesn't give tokens to fools. Sit down, [PLAYER_NAME]. Let's talk business.",
@@ -714,7 +714,7 @@
     "sheriff_sarah_hook": {
       "type": "dialogue",
       "bg": "assets/images/prologue/dialogue.png",
-      "character": "SHERIFF MCCALISTER",
+      "character": "SHERIFF MARCUS MCCALISTER",
       "character_image": "assets/images/characters/sherif/normal.png",
       "emotion": "normal",
       "dialogue": "Sarah Chance was a lot of things. Deputy, card shark, killer, victim. She was all of them at once. The loops do that\u2014split a person into seventeen different truths. I knew one version of her. Maybe you're looking for another.",
@@ -731,7 +731,7 @@
     "sheriff_2": {
       "type": "dialogue",
       "bg": "assets/images/prologue/dialogue.png",
-      "character": "SHERIFF MCCALISTER",
+      "character": "SHERIFF MARCUS MCCALISTER",
       "character_image": "assets/images/characters/sherif/normal.png",
       "emotion": "normal",
       "dialogue": "This casino sits on a temporal wound\u2014a place where Sarah Chance died seventeen times in seventeen different ways. Each death left a scar on reality. The wheel? It spins through those death-moments. Every bet is a gamble with her ghost.",
@@ -1477,11 +1477,11 @@
       "type": "respect_branch",
       "branches": [
         {
-          "condition": "respect < 0",
+          "condition": "respect < 30",
           "next": "texas_red_low_respect_death"
         },
         {
-          "condition": "respect >= 0",
+          "condition": "respect >= 30",
           "next": "texas_red_1"
         }
       ]
@@ -1574,7 +1574,7 @@
       "type": "special_scene",
       "bg": "assets/images/prologue/dialogue.png",
       "text": "The empty chairs at the table begin to glow. You see glimpses: Aldrich crying, Sheriff Marcus loading a gun, a shadowy figure sharpening a knife.",
-      "narration": "McCalister: 'We were the founders. Aldrich brought love and madness. I brought observation and detachment. Marcus brought order and violence. Spades brought death and truth. Together we created Perdition\u2014a prison pretending to be a town.'",
+      "narration": "McCalister: 'We were the founders. Aldrich brought love and madness. I brought observation and detachment. My brother Marcus - you met him at The Broken Spoke - he brought order and violence. We're both McCalister blood, but cursed differently. I observe. He enforces. Spades brought death and truth. Together we created Perdition\u2014a prison pretending to be a town.'",
       "next": "texas_red_spades_reveal"
     },
     "texas_red_2c": {
@@ -1608,7 +1608,7 @@
       "character": "MCCALISTER",
       "character_image": "assets/images/characters/mccalister/angry.png",
       "emotion": "angry",
-      "dialogue": "Impatience is a form of denial. You rush to the game because you're afraid of the truth. Fine. But know this\u2014I've seen you play this game seventy-three times across seventeen loops. You ALWAYS bet your sanity. And you always lose it.",
+      "dialogue": "Impatience is a form of denial. You rush to the game because you're afraid of the truth. Fine. But know this\u2014you've DIED 17 times total, once per loop. But you've sat at THIS specific table 73 times across those 17 loops, retrying and resetting. You ALWAYS bet your sanity. And you always lose it.",
       "next": "texas_red_spades_reveal"
     },
     "texas_red_philosophy_1": {
@@ -1649,7 +1649,7 @@
       "character": "MCCALISTER",
       "character_image": "assets/images/characters/mccalister/meh.png",
       "emotion": "normal",
-      "dialogue": "Spades is you. Future you, from Loop 7. You killed your mother to ensure your own birth. It's a temporal causality loop\u2014you exist because she died. She died because you killed her. Both are true.",
+      "dialogue": "Spades is you. Future you, from Loop 7. Right now, you're in Loop 4. You have three more loops of innocence before you become the killer. You killed your mother to ensure your own birth. It's a temporal causality loop\u2014you exist because she died. She died because you killed her. Both are true. In Loop 17, you'll finally understand why.",
       "choices": [
         {
           "text": "That's insane. I would never kill my mother.",
@@ -2061,11 +2061,11 @@
       "type": "respect_branch",
       "branches": [
         {
-          "condition": "respect < 0",
+          "condition": "respect < 50",
           "next": "scarlett_c5_low_respect_death"
         },
         {
-          "condition": "respect >= 0",
+          "condition": "respect >= 50",
           "next": "scarlett_c5_opening"
         }
       ]
@@ -2093,7 +2093,7 @@
       "character": "SCARLETT",
       "character_image": "assets/images/characters/scarlett/friendly.png",
       "emotion": "normal",
-      "dialogue": "Before we play, I need to know something. What do you think this place is? Really? Because everyone sees The Golden Nugget differently. Some see paradise. Some see hell. Me? I see a cage made of gold.",
+      "dialogue": "Surprised to see me HERE, [PLAYER_NAME]? I told you at the station - in Perdition, where time is shattered, I'm everywhere and nowhere. At Perdition Station, I'm the greeter to the damned. Here at The Jade Dragon, I'm the madam of this golden hell. Both Scarletts are real. Both are trapped. Now, before we play, I need to know something. What do you think this place is? Really?",
       "choices": [
         {
           "text": "It's a trap. A beautiful trap.",
@@ -2594,11 +2594,11 @@
       "type": "respect_branch",
       "branches": [
         {
-          "condition": "respect < 0",
+          "condition": "respect < 40",
           "next": "ling_low_respect_death"
         },
         {
-          "condition": "respect >= 0",
+          "condition": "respect >= 40",
           "next": "ling_first_question"
         }
       ]
@@ -3115,11 +3115,11 @@
       "type": "respect_branch",
       "branches": [
         {
-          "condition": "respect < 0",
+          "condition": "respect < 60",
           "next": "cornelius_low_respect_death"
         },
         {
-          "condition": "respect >= 0",
+          "condition": "respect >= 60",
           "next": "cornelius_opening"
         }
       ]
@@ -3195,7 +3195,7 @@
       "character": "CORNELIUS VANDERBILT",
       "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
       "emotion": "sad",
-      "dialogue": "The crash. Everyone asks about the crash. Fine. I'll tell you. But knowing the truth has a price\u2014it always does in Perdition. The truth is: I CAUSED it. Deliberately. I crashed my own train to trap everyone in one moment. Why? Because my daughter was on board, and she was dying. By freezing time, I froze her death. She's been dying for fifteen years. Neither alive nor dead.",
+      "dialogue": "The crash. Everyone asks about the crash. Fine. I'll tell you. The truth is: I CAUSED it. Deliberately. I crashed my own train in 1887 to trap everyone in one moment. My daughter was on board, and she was dying of cancer. By freezing time, I froze her death. She's been dying for fifteen years. But know this, [PLAYER_NAME] - my crash WOUNDED time. YOUR parents - Sarah and Aldrich - their paradox in 1889? That SHATTERED it completely. I cracked reality. They killed it.",
       "next": "cornelius_crash_revelation"
     },
     "cornelius_crash_revelation": {
