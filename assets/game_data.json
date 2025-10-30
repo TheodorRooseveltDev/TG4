@@ -1969,177 +1969,12 @@
       "action": "return_to_map",
       "unlock": "casino_5"
     },
-    "casino_6_enter": {
-      "type": "narration",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "text": "Casino 6: The Iron Horse. A railroad station where all trains arrive simultaneously\u2014past, present, future, and never. Time doesn't flow here. It's frozen in a single second, experienced infinitely.",
-      "next": "cornelius_introduction"
-    },
-    "cornelius_introduction": {
-      "type": "special_scene",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "text": "CORNELIUS stands at a roulette wheel that spins without moving. He speaks frantically, his words overlapping with echo versions of himself.",
-      "narration": "Cornelius: 'This moment! This EXACT moment has happened 8,847 times! Each iteration slightly different! You've worn blue seventeen times, red forty-two times, and nothing in Loop 1,003! We're trapped in one second of trauma!'",
-      "next": "cornelius_1"
-    },
-    "cornelius_1": {
-      "type": "dialogue",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "character": "cornelius",
-      "character_image": "assets/images/characters/cornelius_normal.png",
-      "emotion": "normal",
-      "dialogue": "Listen carefully\u2014there is no Perdition. No casinos. No journey. You're five years old, holding your father's gun, and this entire adventure is happening in the microsecond between picking it up and deciding what to do. We're all inside one frozen moment of choice.",
-      "choices": [
-        {
-          "text": "Show me proof. Show me the truth.",
-          "next": "cornelius_truth",
-          "effects": {
-            "emotion": "normal",
-            "respect": 35
-          }
-        },
-        {
-          "text": "How do I escape this moment?",
-          "next": "cornelius_2b",
-          "effects": {
-            "emotion": "sad",
-            "respect": 20
-          }
-        },
-        {
-          "text": "If we're frozen, how are we talking?",
-          "next": "cornelius_2c",
-          "effects": {
-            "emotion": "normal",
-            "respect": 25
-          }
-        },
-        {
-          "text": "Make it stop! Make everything stop!",
-          "next": "cornelius_2d",
-          "effects": {
-            "emotion": "angry",
-            "respect": 10
-          }
-        }
-      ]
-    },
-    "cornelius_truth": {
-      "type": "special_scene",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "text": "Cornelius waves his hand. Everything freezes except you and him. Then reality flickers\u2014",
-      "narration": "You see: A five-year-old child (you) in a nursery. Gun in small hands. Mother reaching forward, mouth open mid-scream. Father in the doorway, frozen mid-step. The clock reads 7:32:17 PM and has read that for fifteen years.",
-      "next": "cornelius_revelation"
-    },
-    "cornelius_revelation": {
-      "type": "dialogue",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "character": "cornelius",
-      "character_image": "assets/images/characters/cornelius_happy.png",
-      "emotion": "happy",
-      "dialogue": "You see it now. This entire world\u2014Perdition, the casinos, all the characters\u2014is your five-year-old brain processing trauma. We're all aspects of your psyche. I'm your logic, desperately trying to understand. The casinos are stages of grief. The tokens are memories.",
-      "next": "cornelius_philosophy"
-    },
-    "cornelius_2b": {
-      "type": "dialogue",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "character": "cornelius",
-      "character_image": "assets/images/characters/cornelius_sad.png",
-      "emotion": "sad",
-      "dialogue": "Escape? There is no escape. This IS stopped. Frozen. We're living in amber. The only way out is to complete the choice\u2014pull the trigger or put the gun down. But you've been avoiding that decision for 8,847 iterations.",
-      "next": "cornelius_philosophy"
-    },
-    "cornelius_2c": {
-      "type": "dialogue",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "character": "cornelius",
-      "character_image": "assets/images/characters/cornelius_normal.png",
-      "emotion": "normal",
-      "dialogue": "Excellent question. Time is frozen, but consciousness continues. Think of it like dreaming\u2014hours can pass in a dream that takes seconds in reality. You're experiencing years while reality experiences milliseconds.",
-      "next": "cornelius_philosophy"
-    },
-    "cornelius_2d": {
-      "type": "dialogue",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "character": "cornelius",
-      "character_image": "assets/images/characters/cornelius_angry.png",
-      "emotion": "angry",
-      "dialogue": "It IS stopped! Everything IS stopped! We're paralyzed at the moment of greatest trauma! This isn't movement\u2014it's the illusion of movement! We're spinning in place like a roulette wheel that never lands!",
-      "next": "cornelius_philosophy"
-    },
-    "cornelius_philosophy": {
-      "type": "dialogue",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "character": "cornelius",
-      "character_image": "assets/images/characters/cornelius_sad.png",
-      "emotion": "sad",
-      "dialogue": "Every person you've met\u2014Moses, Mary, McCalister, Diego, Ling\u2014they're all you. Different aspects of your child's mind trying to process. 'Did mother die? Is it my fault? Can I fix it?' Each casino is a different answer to those questions.",
-      "next": "cornelius_chamber"
-    },
-    "cornelius_chamber": {
-      "type": "special_scene",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "text": "Cornelius produces a revolver\u2014it's your father's gun, perfectly preserved.",
-      "narration": "Cornelius: 'Six chambers. Six major choices. You spin the cylinder, but it always lands on the same chamber\u2014the one where you haven't decided yet. Russian roulette with fate. You're waiting for the bullet to tell you what to do.'",
-      "next": "cornelius_game"
-    },
-    "cornelius_game": {
-      "type": "game",
-      "bg": "assets/images/utilities/poker_table.png",
-      "game_type": "frozen_moment_roulette",
-      "special": "Six chambers representing six possible futures. Spin until you find the truth.",
-      "buy_in": 250,
-      "rounds": 6,
-      "chambers": [
-        "Mother dies",
-        "Father dies",
-        "You die",
-        "Everyone lives",
-        "Everyone dies",
-        "Nobody was ever here"
-      ],
-      "win": "cornelius_win",
-      "lose": "cornelius_lose"
-    },
-    "cornelius_win": {
-      "type": "dialogue",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "character": "cornelius",
-      "character_image": "assets/images/characters/cornelius_sad.png",
-      "emotion": "sad",
-      "dialogue": "You found the empty chamber. The truth is: You haven't decided yet. You're not saving her, avenging her, or mourning her. You're frozen in the moment BEFORE all of that. Here's the steel token\u2014forged from indecision.",
-      "receive": "steel_token",
-      "items": [
-        "frozen_bullet",
-        "clock_stopped_at_7_32"
-      ],
-      "effects": {
-        "money": 500,
-        "respect": 45
-      },
-      "next": "cornelius_final"
-    },
-    "cornelius_final": {
-      "type": "dialogue",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "character": "cornelius",
-      "character_image": "assets/images/characters/cornelius_normal.png",
-      "emotion": "normal",
-      "dialogue": "Before you go\u2014know this. Delilah Rose is next. She'll tell you everyone here is your mother. She's right. Every woman, every man, every stranger\u2014they're all Sarah Chance refracted through your guilt and love. Prepare yourself.",
-      "next": "loop_6_encounter"
-    },
     "loop_6_encounter": {
       "type": "special_scene",
       "bg": "assets/images/casinos/iron_horse.png",
       "text": "Loop 6 You appears, older, wearing a conductor's uniform.",
       "narration": "Loop 6 You: 'I tried to understand the system logically. Failed. Some truths can only be felt, not reasoned. Delilah will destroy you emotionally. Let her. It's necessary.'",
       "next": "casino_7_enter"
-    },
-    "cornelius_lose": {
-      "type": "game_over",
-      "bg": "assets/images/casinos/iron_horse.png",
-      "text": "Wrong chamber. The bullet fires. You're dead in the frozen moment, killed by your own indecision. Time never resumes. You're a corpse experiencing eternity.",
-      "can_retry": true
     },
     "casino_7_enter": {
       "type": "narration",
@@ -3260,6 +3095,637 @@
       "type": "system",
       "action": "return_to_map",
       "unlock": "casino_6"
+    },
+    "casino_6_enter": {
+      "type": "narration",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Casino 6: The Iron Horse. A grand railroad station transformed into a casino. Steam locomotives sit frozen at platforms that go nowhere. Tracks loop into themselves. Time feels wrong here\u2014stretched and compressed simultaneously.",
+      "next": "cornelius_intro"
+    },
+    "cornelius_intro": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "CORNELIUS VANDERBILT stands before a massive locomotive, checking a pocket watch that runs backwards. He's dressed in an expensive suit covered in coal dust. His eyes hold the madness of someone who's seen too much.",
+      "narration": "Cornelius: '[PLAYER_NAME]. Right on schedule. Or should I say... off schedule? Time is broken here. Has been since the Great Crash of '87. When my train derailed, it didn't just kill passengers\u2014it killed TIME ITSELF. Now we're all stuck in the moment before impact. Forever.'",
+      "next": "cornelius_respect_check"
+    },
+    "cornelius_respect_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "respect < 0",
+          "next": "cornelius_low_respect_death"
+        },
+        {
+          "condition": "respect >= 0",
+          "next": "cornelius_opening"
+        }
+      ]
+    },
+    "cornelius_low_respect_death": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "emotion": "killing",
+      "dialogue": "You walk into MY station with hatred in your heart? This place runs on RESPECT and SCHEDULE! You're neither respectful nor on time! I'll fix that\u2014permanently!",
+      "next": "cornelius_low_respect_death_2"
+    },
+    "cornelius_low_respect_death_2": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "text": "Cornelius blows a whistle. The frozen locomotive suddenly MOVES\u2014directly toward you. You try to run, but time is frozen for everyone except the train. It hits you at full speed. Over. And over. And over. Forever.",
+      "can_retry": true
+    },
+    "cornelius_opening": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "Welcome to The Iron Horse. We have one rule here: STAY ON SCHEDULE. Miss your timing, and you die. Simple as that. The trains don't wait, and neither does death. Now\u2014why are you here?",
+      "choices": [
+        {
+          "text": "I'm here for the iron token. Nothing more.",
+          "next": "cornelius_token_path",
+          "effects": {
+            "respect": 20
+          }
+        },
+        {
+          "text": "Tell me about the train crash. What really happened?",
+          "next": "cornelius_crash_path",
+          "effects": {
+            "respect": 25,
+            "sanity": -5
+          }
+        },
+        {
+          "text": "How do I break the time loop in this station?",
+          "next": "cornelius_loop_path",
+          "effects": {
+            "respect": 30
+          }
+        },
+        {
+          "text": "Your station is a joke. Let's just play cards.",
+          "next": "cornelius_insult_path",
+          "effects": {
+            "respect": -15
+          }
+        }
+      ]
+    },
+    "cornelius_token_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "Straight to business. I respect that. Time is money, and money is power. But in THIS station, time is EVERYTHING. You want the token? You'll have to survive the Last Train. Many have tried. All have died.",
+      "next": "cornelius_challenge_1"
+    },
+    "cornelius_crash_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
+      "emotion": "sad",
+      "dialogue": "The crash. Everyone asks about the crash. Fine. I'll tell you. But knowing the truth has a price\u2014it always does in Perdition. The truth is: I CAUSED it. Deliberately. I crashed my own train to trap everyone in one moment. Why? Because my daughter was on board, and she was dying. By freezing time, I froze her death. She's been dying for fifteen years. Neither alive nor dead.",
+      "next": "cornelius_crash_revelation"
+    },
+    "cornelius_crash_revelation": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Cornelius points to a passenger car. Through the window, you see a young girl\u2014maybe twelve\u2014frozen mid-scream. Blood hangs in the air around her like red crystals.",
+      "narration": "Cornelius: 'That's Emily. My daughter. She's been in that exact moment for 5,478 days. The moment before death. I keep her there because I can't let go. But the cost... oh god, the cost. Everyone else on the train suffers too. 247 souls, frozen in their final moments. I'm a monster. But I'm a father first.'",
+      "next": "cornelius_challenge_1"
+    },
+    "cornelius_loop_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/corky.png",
+      "emotion": "happy",
+      "dialogue": "Break the loop? HA! You think I haven't TRIED?! I've tried 8,847 times! Every attempt fails! You know why? Because breaking the loop means letting my daughter DIE! And I will NEVER\u2014do you hear me?\u2014NEVER let her go!",
+      "next": "cornelius_loop_madness"
+    },
+    "cornelius_loop_madness": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Cornelius laughs\u2014a broken, desperate sound. The station trembles. Clocks spin wildly.",
+      "narration": "Cornelius: 'But you're different. You're Aldrich's son. Time bends around you. Maybe... maybe YOU can break what I cannot. But it'll cost you. Everything costs something in Perdition. Especially hope.'",
+      "next": "cornelius_challenge_1"
+    },
+    "cornelius_insult_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "emotion": "angry",
+      "dialogue": "A JOKE?! This station is a MONUMENT to sacrifice! To love! To the things we'll do to save those we care about! You dare mock that?! I'll show you what happens to disrespectful children!",
+      "next": "cornelius_insult_death"
+    },
+    "cornelius_insult_death": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "text": "Cornelius snaps his fingers. Time REVERSES. You feel yourself un-aging, shrinking, becoming younger and younger until you're an infant, then a fetus, then nothing. You were never born. You never existed. The station forgets you completely.",
+      "can_retry": true
+    },
+    "cornelius_challenge_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "Here's the game: I'll ask you three questions about TIME. Answer correctly, and you board the Last Train. Answer wrong... and you become part of the crash. Forever. Ready?",
+      "choices": [
+        {
+          "text": "I'm ready. Ask your questions.",
+          "next": "cornelius_question_1",
+          "effects": {
+            "respect": 20
+          }
+        },
+        {
+          "text": "What if I refuse to play?",
+          "next": "cornelius_refuse_path",
+          "effects": {
+            "respect": 10
+          }
+        },
+        {
+          "text": "Can I see your daughter first?",
+          "next": "cornelius_daughter_path",
+          "effects": {
+            "respect": 30,
+            "sanity": -10
+          }
+        }
+      ]
+    },
+    "cornelius_refuse_path": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "emotion": "killing",
+      "dialogue": "REFUSE?! There is NO refusal in The Iron Horse! The train runs whether you board it or not! And if you won't board willingly, I'll MAKE you board!",
+      "next": "cornelius_refuse_death"
+    },
+    "cornelius_refuse_death": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "text": "Chains emerge from the locomotive, wrapping around your arms and legs. They drag you onto the train. The doors slam shut. Through the window, you see Cornelius waving goodbye. The train lurches forward\u2014directly into a wall. The crash happens. Forever. You die. Forever.",
+      "can_retry": true
+    },
+    "cornelius_daughter_path": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "Cornelius hesitates, then nods. He leads you to the passenger car. Up close, Emily looks even more tragic\u2014caught between life and death, pain and peace.",
+      "narration": "Cornelius: 'She was twelve. Bright. Kind. Wanted to be a doctor. Then one day, I noticed blood on her pillow. Cancer. Terminal. Six months to live. The crash happened on our way to a specialist. I chose to trap her here rather than let her die. Was I wrong? Am I a monster? I don't know anymore.'",
+      "next": "cornelius_question_1"
+    },
+    "cornelius_question_1": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "First question: What is time? Is it a river that flows forward? A circle that repeats? A line that can be walked? Or something else entirely?",
+      "choices": [
+        {
+          "text": "Time is a river\u2014it flows forward, unstoppable.",
+          "next": "cornelius_q1_wrong",
+          "effects": {
+            "respect": -10
+          }
+        },
+        {
+          "text": "Time is a circle\u2014everything repeats eventually.",
+          "next": "cornelius_q1_partial",
+          "effects": {
+            "respect": 10
+          }
+        },
+        {
+          "text": "Time is a prison\u2014it traps us in moments we can't escape.",
+          "next": "cornelius_q1_correct",
+          "effects": {
+            "respect": 30
+          }
+        },
+        {
+          "text": "Time is an illusion. It doesn't exist at all.",
+          "next": "cornelius_q1_wrong",
+          "effects": {
+            "respect": -10
+          }
+        }
+      ]
+    },
+    "cornelius_q1_wrong": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "emotion": "killing",
+      "dialogue": "WRONG! Time is none of those things! You don't understand! You'll never understand! And now... now you'll BECOME time! Frozen! Forever!",
+      "next": "cornelius_q1_wrong_death"
+    },
+    "cornelius_q1_wrong_death": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "text": "Cornelius touches your shoulder. You FREEZE. Not dead\u2014worse. Conscious but unable to move, think, or scream. You're aware of every second that passes. Days become years become decades. You stand there, frozen, screaming internally, forever.",
+      "can_retry": true
+    },
+    "cornelius_q1_partial": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "Close. Time DOES repeat\u2014I've seen it repeat 8,847 times. But that's not what time IS. Time is... something darker. Something crueler. But you're close enough. Next question.",
+      "next": "cornelius_question_2"
+    },
+    "cornelius_q1_correct": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
+      "emotion": "happy",
+      "dialogue": "YES! Time is a PRISON! We're all inmates serving sentences we don't remember committing! This station? It's solitary confinement! Emily's frozen moment? It's her cell! You understand! Finally, someone UNDERSTANDS!",
+      "next": "cornelius_question_2"
+    },
+    "cornelius_question_2": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "Second question: If you could save someone you love by trapping 247 innocent people in eternal suffering, would you do it? BE HONEST.",
+      "choices": [
+        {
+          "text": "Yes. I'd sacrifice anyone to save those I love.",
+          "next": "cornelius_q2_yes",
+          "effects": {
+            "respect": 40,
+            "sanity": -15
+          }
+        },
+        {
+          "text": "No. One life isn't worth 247 souls.",
+          "next": "cornelius_q2_no",
+          "effects": {
+            "respect": 20
+          }
+        },
+        {
+          "text": "I don't know. I've never faced that choice.",
+          "next": "cornelius_q2_honest",
+          "effects": {
+            "respect": 30
+          }
+        },
+        {
+          "text": "You're a monster for even asking.",
+          "next": "cornelius_q2_judge",
+          "effects": {
+            "respect": -30
+          }
+        }
+      ]
+    },
+    "cornelius_q2_yes": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
+      "emotion": "sad",
+      "dialogue": "Finally. FINALLY someone admits the truth. Everyone pretends they're noble, but when it comes down to it\u2014when love and morality clash\u2014love ALWAYS wins. You're honest. Brutal, but honest. I respect that. Even if it damns us both.",
+      "next": "cornelius_question_3"
+    },
+    "cornelius_q2_no": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "Noble words. Easy to say when it's not YOUR daughter dying. But I'll accept your answer. Judgment is for the living. I'm already dead inside. Last question.",
+      "next": "cornelius_question_3"
+    },
+    "cornelius_q2_honest": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
+      "emotion": "normal",
+      "dialogue": "Honesty. Rare in Perdition. Most people lie\u2014to me, to others, to themselves. But you admit ignorance. That takes courage. Or perhaps it's wisdom to know you don't know. Either way\u2014I accept it.",
+      "next": "cornelius_question_3"
+    },
+    "cornelius_q2_judge": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "emotion": "killing",
+      "dialogue": "A MONSTER?! I'm a FATHER! I did what ANY father would do! And YOU\u2014you DARE judge me?! Then judge THIS!",
+      "next": "cornelius_q2_judge_death"
+    },
+    "cornelius_q2_judge_death": {
+      "type": "game_over",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/killing.png",
+      "text": "Cornelius shoves you into the passenger car\u2014into Emily's frozen moment. You feel her pain. Her terror. Her slow death from cancer, stretched across eternity. Every cell in your body screams. You die slowly, painfully, forever. Just like her.",
+      "can_retry": true
+    },
+    "cornelius_question_3": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "Final question: Your mother, Sarah Chance. Did she deserve to die?",
+      "choices": [
+        {
+          "text": "No one deserves to die.",
+          "next": "cornelius_q3_noble",
+          "effects": {
+            "respect": 25
+          }
+        },
+        {
+          "text": "She chose death. That's different from deserving it.",
+          "next": "cornelius_q3_philosophical",
+          "effects": {
+            "respect": 35
+          }
+        },
+        {
+          "text": "Yes. She abandoned me.",
+          "next": "cornelius_q3_bitter",
+          "effects": {
+            "respect": 15,
+            "sanity": -10
+          }
+        },
+        {
+          "text": "I don't want to talk about my mother.",
+          "next": "cornelius_q3_refuse",
+          "effects": {
+            "respect": 20
+          }
+        }
+      ]
+    },
+    "cornelius_q3_noble": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
+      "emotion": "normal",
+      "dialogue": "Noble. Idealistic. Wrong\u2014but noble nonetheless. Everyone deserves something. Life, death, suffering, joy. Your mother deserved peace. And in Perdition, death IS peace. You pass.",
+      "next": "cornelius_game_intro"
+    },
+    "cornelius_q3_philosophical": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
+      "emotion": "happy",
+      "dialogue": "EXACTLY! Choice and deserving are NOT the same! My Emily didn't deserve cancer, but she got it anyway! Your mother didn't deserve to die, but she CHOSE it! That's the cruelty of existence\u2014deserving means NOTHING! You understand! You pass!",
+      "next": "cornelius_game_intro"
+    },
+    "cornelius_q3_bitter": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
+      "emotion": "sad",
+      "dialogue": "Bitter. Hurt. Angry. I understand that feeling. Emily 'abandoned' me too\u2014not by choice, but by biology. Cancer doesn't care about fathers and daughters. Your mother's death was her way of saving you. Abandonment disguised as love. You pass\u2014but your pain will haunt you forever.",
+      "next": "cornelius_game_intro"
+    },
+    "cornelius_q3_refuse": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "You refuse to discuss her. Smart. Some wounds shouldn't be prodded. I respect boundaries\u2014I have my own. You pass. Now... let's play the REAL game.",
+      "next": "cornelius_game_intro"
+    },
+    "cornelius_game_intro": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "You've answered my questions. Now we play Temporal Poker. Five cards. Each one represents a moment in time\u2014past, present, or future. Win, and you get the iron token and freedom. Lose... and you become part of my frozen moment. Forever.",
+      "next": "cornelius_bet_check"
+    },
+    "cornelius_bet_check": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "money >= 200",
+          "next": "cornelius_bet_choice_full"
+        },
+        {
+          "condition": "money < 200",
+          "next": "cornelius_bet_choice_poor"
+        }
+      ]
+    },
+    "cornelius_bet_choice_full": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "sanity < 35",
+          "next": "cornelius_bet_full_insane"
+        },
+        {
+          "condition": "sanity >= 35",
+          "next": "cornelius_bet_full_sane"
+        }
+      ]
+    },
+    "cornelius_bet_full_insane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "Your mind is fractured. You can't bet sanity you've already lost. But you have money... and you have TIME. Choose your wager.",
+      "choices": [
+        {
+          "text": "I bet $200. Take my money.",
+          "next": "cornelius_bet_money",
+          "effects": {
+            "money": -200
+          }
+        },
+        {
+          "text": "I bet ten years of my life.",
+          "next": "cornelius_bet_time",
+          "effects": {
+            "truth": -50
+          }
+        }
+      ]
+    },
+    "cornelius_bet_full_sane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "What will you wager? Money, sanity, or time itself?",
+      "choices": [
+        {
+          "text": "I bet my sanity. Show me all of time.",
+          "next": "cornelius_bet_sanity",
+          "effects": {
+            "sanity": -30
+          }
+        },
+        {
+          "text": "I bet $200. Money is meaningless here.",
+          "next": "cornelius_bet_money",
+          "effects": {
+            "money": -200
+          }
+        },
+        {
+          "text": "I bet ten years of my life.",
+          "next": "cornelius_bet_time",
+          "effects": {
+            "truth": -50
+          }
+        }
+      ]
+    },
+    "cornelius_bet_choice_poor": {
+      "type": "respect_branch",
+      "branches": [
+        {
+          "condition": "sanity < 35",
+          "next": "cornelius_bet_poor_insane"
+        },
+        {
+          "condition": "sanity >= 35",
+          "next": "cornelius_bet_poor_sane"
+        }
+      ]
+    },
+    "cornelius_bet_poor_insane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "You're broke. Your mind is gone. All you have left is TIME. And time is the cruelest currency of all.",
+      "choices": [
+        {
+          "text": "Take ten years. Take everything.",
+          "next": "cornelius_bet_time",
+          "effects": {
+            "truth": -50
+          }
+        }
+      ]
+    },
+    "cornelius_bet_poor_sane": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/normal.png",
+      "emotion": "normal",
+      "dialogue": "No money. But you have your mind... and you have TIME. Choose.",
+      "choices": [
+        {
+          "text": "I bet my sanity. It's all I have.",
+          "next": "cornelius_bet_sanity",
+          "effects": {
+            "sanity": -30
+          }
+        },
+        {
+          "text": "I bet ten years of my life.",
+          "next": "cornelius_bet_time",
+          "effects": {
+            "truth": -50
+          }
+        }
+      ]
+    },
+    "cornelius_bet_sanity": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The cards are dealt. Each one shows a different timeline\u2014you as a child, as an old man, as a corpse, as something that never existed.",
+      "narration": "You win with a straight flush of lives you'll never live. But the cost\u2014seeing every possible version of yourself\u2014shatters your mind. Cornelius slides the iron token across the table. 'Congratulations. You've won the right to remember every life you didn't choose. Forever.'",
+      "next": "cornelius_win"
+    },
+    "cornelius_bet_money": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The cards are dealt. Cornelius plays honestly\u2014he doesn't need to cheat when time itself is rigged. You win with a royal flush of moments.",
+      "narration": "Cornelius nods grimly. 'Money buys many things. Freedom isn't one of them. But today, it bought you this.' He pushes the iron token toward you. It's cold as death and heavy as regret.",
+      "next": "cornelius_win"
+    },
+    "cornelius_bet_time": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "The cards are dealt. As you play, you FEEL ten years drain from you. Your hands age. Your joints ache. Gray appears in your hair.",
+      "narration": "You win the hand. But Cornelius looks at you with pity. 'You just traded a decade for a token. Was it worth it? You'll die ten years sooner now. Every moment from now on is borrowed time.' He slides the iron token across. It feels like a coffin.",
+      "next": "cornelius_win"
+    },
+    "cornelius_win": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
+      "emotion": "normal",
+      "dialogue": "You won. Take the iron token. And this\u2014a conductor's watch. It runs backwards. When it reaches zero, time will restart. Or end. I'm not sure which anymore. Good luck, [PLAYER_NAME]. You'll need it.",
+      "receive": "iron_token",
+      "items": [
+        "conductor_watch",
+        "frozen_moment"
+      ],
+      "effects": {
+        "money": 200,
+        "respect": 45
+      },
+      "next": "cornelius_final"
+    },
+    "cornelius_final": {
+      "type": "dialogue",
+      "bg": "assets/images/prologue/dialogue.png",
+      "character": "CORNELIUS VANDERBILT",
+      "character_image": "assets/images/characters/corneliusvanderbilt/smiling.png",
+      "emotion": "sad",
+      "dialogue": "Before you go\u2014if you ever find a way to break time loops... come back. Free Emily. Free the 247 souls trapped here. I can't do it. But maybe you can. Maybe Aldrich's son can do what the railroad baron couldn't.",
+      "next": "casino_6_complete"
+    },
+    "casino_6_complete": {
+      "type": "special_scene",
+      "bg": "assets/images/prologue/dialogue.png",
+      "text": "You leave The Iron Horse. Behind you, the station remains frozen. Emily remains dying. Cornelius remains watching. All trapped in their eternal moment.",
+      "narration": "As you step outside, you hear the whistle of a train that will never arrive. Time moves forward for you. For them, it's forever stopped.",
+      "next": "casino_6_return_map"
+    },
+    "casino_6_return_map": {
+      "type": "system",
+      "action": "return_to_map",
+      "unlock": "casino_7"
     }
   },
   "screens_part3": {

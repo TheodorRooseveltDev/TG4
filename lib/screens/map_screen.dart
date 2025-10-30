@@ -18,6 +18,7 @@ class _MapScreenState extends ConsumerState<MapScreen> with TickerProviderStateM
   Map<String, dynamic>? _selectedCasino;
   Offset? _modalPosition;
   bool _showLockedMessage = false;
+  bool _isComingSoonMessage = false; // New flag to differentiate message types
   
   // Locked message animations
   late AnimationController _messageController;
@@ -132,6 +133,15 @@ class _MapScreenState extends ConsumerState<MapScreen> with TickerProviderStateM
   void _showLockedCasinoMessage() {
     setState(() {
       _showLockedMessage = true;
+      _isComingSoonMessage = false;
+    });
+    _messageController.forward();
+  }
+
+  void _showComingSoonMessage() {
+    setState(() {
+      _showLockedMessage = true;
+      _isComingSoonMessage = true;
     });
     _messageController.forward();
   }
@@ -334,26 +344,26 @@ class _MapScreenState extends ConsumerState<MapScreen> with TickerProviderStateM
     // Reverse order: 10 at top, 1 at bottom
     // DRAMATIC X movement (0.1-0.7), tight Y spacing
     final casinoData = [
-      // Casino 10 - TOP - Far RIGHT
-      {'number': 10, 'name': 'The Pharaoh\'s Palace', 'boss': 'Aldrich & Marcus', 'locked': !unlockedCasinos.contains('casino_10'), 'x': 0.65, 'y': 50.0},
-      // Casino 9 - SWING to FAR LEFT (dramatic!)
-      {'number': 9, 'name': 'The Midnight Oil', 'boss': 'The Professor', 'locked': !unlockedCasinos.contains('casino_9'), 'x': 0.15, 'y': 160.0},
-      // Casino 8 - SWING to FAR RIGHT (huge curve!)
-      {'number': 8, 'name': 'The Crystal Crown', 'boss': 'The Baron', 'locked': !unlockedCasinos.contains('casino_8'), 'x': 0.70, 'y': 300.0},
-      // Casino 7 - Back to LEFT side
-      {'number': 7, 'name': 'The Velvet Room', 'boss': 'Delilah Rose', 'locked': !unlockedCasinos.contains('casino_7'), 'x': 0.20, 'y': 410.0},
+      // Casino 10 - TOP - Far RIGHT - ALWAYS LOCKED (Coming Soon)
+      {'number': 10, 'name': 'The Pharaoh\'s Palace', 'boss': 'Aldrich & Marcus', 'locked': true, 'comingSoon': true, 'x': 0.65, 'y': 50.0},
+      // Casino 9 - SWING to FAR LEFT (dramatic!) - ALWAYS LOCKED (Coming Soon)
+      {'number': 9, 'name': 'The Midnight Oil', 'boss': 'The Professor', 'locked': true, 'comingSoon': true, 'x': 0.15, 'y': 160.0},
+      // Casino 8 - SWING to FAR RIGHT (huge curve!) - ALWAYS LOCKED (Coming Soon)
+      {'number': 8, 'name': 'The Crystal Crown', 'boss': 'The Baron', 'locked': true, 'comingSoon': true, 'x': 0.70, 'y': 300.0},
+      // Casino 7 - Back to LEFT side - ALWAYS LOCKED (Coming Soon)
+      {'number': 7, 'name': 'The Velvet Room', 'boss': 'Delilah Rose', 'locked': true, 'comingSoon': true, 'x': 0.20, 'y': 410.0},
       // Casino 6 - Swing RIGHT
-      {'number': 6, 'name': 'The Iron Horse', 'boss': 'Cornelius', 'locked': !unlockedCasinos.contains('casino_6'), 'x': 0.60, 'y': 520.0},
+      {'number': 6, 'name': 'The Iron Horse', 'boss': 'Cornelius', 'locked': !unlockedCasinos.contains('casino_6'), 'comingSoon': false, 'x': 0.60, 'y': 520.0},
       // Casino 5 - SWING to FAR LEFT
-      {'number': 5, 'name': 'The Jade Dragon', 'boss': 'Scarlett', 'locked': !unlockedCasinos.contains('casino_5'), 'x': 0.10, 'y': 660.0},
+      {'number': 5, 'name': 'The Jade Dragon', 'boss': 'Scarlett', 'locked': !unlockedCasinos.contains('casino_5'), 'comingSoon': false, 'x': 0.10, 'y': 660.0},
       // Casino 4 - SWING to FAR RIGHT (massive curve!)
-      {'number': 4, 'name': 'The Golden Nugget', 'boss': 'Ling', 'locked': !unlockedCasinos.contains('casino_4'), 'x': 0.68, 'y': 820.0},
+      {'number': 4, 'name': 'The Golden Nugget', 'boss': 'Ling', 'locked': !unlockedCasinos.contains('casino_4'), 'comingSoon': false, 'x': 0.68, 'y': 820.0},
       // Casino 3 - Swing back to LEFT
-      {'number': 3, 'name': 'The Silver Saddle', 'boss': 'McCalister', 'locked': !unlockedCasinos.contains('casino_3'), 'x': 0.25, 'y': 930.0},
+      {'number': 3, 'name': 'The Silver Saddle', 'boss': 'McCalister', 'locked': !unlockedCasinos.contains('casino_3'), 'comingSoon': false, 'x': 0.25, 'y': 930.0},
       // Casino 2 - Swing to RIGHT
-      {'number': 2, 'name': 'The Broken Spoke', 'boss': 'Mary Crow Feather', 'locked': !unlockedCasinos.contains('casino_2'), 'x': 0.55, 'y': 1040.0},
+      {'number': 2, 'name': 'The Broken Spoke', 'boss': 'Mary Crow Feather', 'locked': !unlockedCasinos.contains('casino_2'), 'comingSoon': false, 'x': 0.55, 'y': 1040.0},
       // Casino 1 - BOTTOM - Center-left
-      {'number': 1, 'name': 'The Dusty Dollar', 'boss': 'Old Moses', 'locked': !unlockedCasinos.contains('casino_1'), 'x': 0.30, 'y': 1150.0},
+      {'number': 1, 'name': 'The Dusty Dollar', 'boss': 'Old Moses', 'locked': !unlockedCasinos.contains('casino_1'), 'comingSoon': false, 'x': 0.30, 'y': 1150.0},
     ];
 
     return SingleChildScrollView(
@@ -374,6 +384,7 @@ class _MapScreenState extends ConsumerState<MapScreen> with TickerProviderStateM
                 casino['name'] as String,
                 casino['boss'] as String,
                 casino['locked'] as bool,
+                casino['comingSoon'] as bool,
                 casino['x'] as double,
                 casino['y'] as double,
               )),
@@ -384,7 +395,7 @@ class _MapScreenState extends ConsumerState<MapScreen> with TickerProviderStateM
     );
   }
 
-  Widget _buildCasinoIcon(int number, String name, String boss, bool locked, double xPercent, double yPos) {
+  Widget _buildCasinoIcon(int number, String name, String boss, bool locked, bool comingSoon, double xPercent, double yPos) {
     const iconSize = 100.0;
     final completedCasinos = ref.watch(gameStateProvider).completedCasinos;
     final isCompleted = completedCasinos.contains('casino_$number');
@@ -402,8 +413,11 @@ class _MapScreenState extends ConsumerState<MapScreen> with TickerProviderStateM
             width: iconSize,
             child: GestureDetector(
               onTap: () {
-                if (locked) {
-                  // Show locked message
+                if (comingSoon) {
+                  // Show "Coming Soon" message for casinos 7, 8, 9, 10
+                  _showComingSoonMessage();
+                } else if (locked) {
+                  // Show locked message for regular locked casinos
                   _showLockedCasinoMessage();
                 } else {
                   print('Casino $number clicked! Name: $name');
@@ -753,7 +767,9 @@ class _MapScreenState extends ConsumerState<MapScreen> with TickerProviderStateM
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 18), // Increased from 8 to 18
                         child: Text(
-                          'Complete the previous level\nto unlock this casino',
+                          _isComingSoonMessage
+                              ? 'Coming Soon!\nThis casino will be available\nin a future update'
+                              : 'Complete the previous level\nto unlock this casino',
                           style: WesternTextStyles.dialogue(
                             fontSize: 17,
                             color: const Color(0xFF1A0F08),
