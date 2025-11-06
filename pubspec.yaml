@@ -86,7 +86,12 @@ flutter:
   assets:
     - assets/game_data.json
     - assets/game_lore.md
-    - assets/images/casinos/
+    - assets/images/casinos/dusty_dollar/
+    - assets/images/casinos/broken_spoke/
+    - assets/images/casinos/silver_saddle/
+    - assets/images/casinos/golden_nugget/
+    - assets/images/casinos/jade_dragon/
+    - assets/images/casinos/iron_horse/
     - assets/images/characters/scarlett/
     - assets/images/characters/moose/
     - assets/images/characters/sherif/
