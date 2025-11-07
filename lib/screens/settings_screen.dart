@@ -333,12 +333,12 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                             children: [
                               _buildButton(
                                 'Privacy Policy',
-                                () => _openWebView('Privacy Policy', 'https://example.com'),
+                                () => _openWebView('Privacy Policy', 'https://casinoclashsaga.com/privacy/'),
                               ),
                               const SizedBox(height: 12),
                               _buildButton(
                                 'Terms & Conditions',
-                                () => _openWebView('Terms & Conditions', 'https://example.com'),
+                                () => _openWebView('Terms & Conditions', 'https://casinoclashsaga.com/terms/'),
                               ),
                             ],
                           ),
