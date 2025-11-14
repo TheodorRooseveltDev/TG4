@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'dart:math';
-import '../services/game_save_service.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,36 +12,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-
-    // Check for saved game and navigate after 2.5 seconds
-    _initializeAndNavigate();
-  }
-
-  Future<void> _initializeAndNavigate() async {
-    await Future.delayed(const Duration(milliseconds: 2500));
-    
-    if (!mounted) return;
-
-    // Check if there's a saved game
-    final gameSaveService = GameSaveService.instance;
-    final savedGame = await gameSaveService.loadGame();
-    
-    if (savedGame != null) {
-      final prologueCompleted = savedGame.playerStats.specialFlags['prologueCompleted'] ?? false;
-      
-      if (prologueCompleted && savedGame.playerStats.name.isNotEmpty) {
-        // Navigate to map if prologue is completed
-        if (mounted) {
-          Navigator.pushReplacementNamed(context, '/map');
-        }
-        return;
-      }
-    }
-    
-    // Navigate to prologue for new game or incomplete prologue
-    if (mounted) {
-      Navigator.pushReplacementNamed(context, '/prologue');
-    }
   }
 
   @override
@@ -62,9 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
             bottom: 60,
             left: 0,
             right: 0,
-            child: Center(
-              child: WavingBulletsLoader(),
-            ),
+            child: Center(child: WavingBulletsLoader()),
           ),
         ],
       ),
@@ -110,10 +76,10 @@ class _WavingBulletsLoaderState extends State<WavingBulletsLoader>
             // Stagger the wave animation for each bullet
             final delay = index * 0.2;
             final animationValue = (_controller.value - delay) % 1.0;
-            
+
             // Create a smooth wave using sine
             final offset = sin(animationValue * 2 * pi) * 15;
-            
+
             return Transform.translate(
               offset: Offset(0, offset),
               child: Padding(

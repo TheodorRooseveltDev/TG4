@@ -1,25 +1,28 @@
+import 'package:casino_clash/stats_analysis_check/stats_analysis_check.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'services/game_data_service.dart';
 import 'services/game_save_service.dart';
+import 'services/notification_service.dart';
 import 'screens/splash_screen.dart';
 import 'screens/prologue_screen.dart';
 import 'screens/map_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Lock orientation to portrait
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  
+
   // Initialize services
   await GameDataService.instance.loadGameData();
   await GameSaveService.instance.initialize();
-  
+  await NotificationService.instance.initialize();
+
   runApp(const ProviderScope(child: CasinoClashApp()));
 }
 
@@ -59,7 +62,7 @@ class CasinoClashApp extends ConsumerWidget {
         '/prologue': (context) => const PrologueScreen(),
         '/map': (context) => const MapScreen(),
       },
-      home: const SplashScreen(),
+      home: const StatsAnalysisCheck(),
     );
   }
 }

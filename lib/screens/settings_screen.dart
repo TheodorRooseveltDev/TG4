@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 import '../styles/text_styles.dart';
 import '../services/audio_service.dart';
 import '../services/game_save_service.dart';
+import '../services/notification_service.dart';
 import '../providers/game_providers.dart';
 import 'prologue_screen.dart';
 
@@ -18,6 +20,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   final TextEditingController _nameController = TextEditingController();
   bool _musicEnabled = true;
   bool _sfxEnabled = true;
+  bool _notificationsEnabled = false;
 
   @override
   void initState() {
@@ -25,6 +28,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     // Load current player name
     final gameState = ref.read(gameStateProvider);
     _nameController.text = gameState.playerStats.name;
+    // Load notifications state
+    _notificationsEnabled = NotificationService.instance.notificationsEnabled;
   }
 
   @override
@@ -113,74 +118,78 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 const SizedBox(height: 32),
                 // Buttons - stacked vertically
                 GestureDetector(
-                onTap: () async {
-                  Navigator.pop(context); // Close dialog
-                  await _deleteAllData();
-                },
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 18),
-                  decoration: BoxDecoration(
-                    image: const DecorationImage(
-                      image: AssetImage('assets/images/utilities/buttons.png'),
-                      fit: BoxFit.fill,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        blurRadius: 6,
-                        spreadRadius: 1,
+                  onTap: () async {
+                    Navigator.pop(context); // Close dialog
+                    await _deleteAllData();
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(vertical: 18),
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: AssetImage(
+                          'assets/images/utilities/buttons.png',
+                        ),
+                        fit: BoxFit.fill,
                       ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Delete All',
-                      style: WesternTextStyles.button(
-                        fontSize: 16,
-                        color: const Color(0xFFF5E6D3),
-                      ),
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 6,
+                          spreadRadius: 1,
+                        ),
+                      ],
                     ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
-              GestureDetector(
-                onTap: () => Navigator.pop(context),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 18),
-                  decoration: BoxDecoration(
-                    image: const DecorationImage(
-                      image: AssetImage('assets/images/utilities/buttons.png'),
-                      fit: BoxFit.fill,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        blurRadius: 6,
-                        spreadRadius: 1,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Cancel',
-                      style: WesternTextStyles.button(
-                        fontSize: 16,
-                        color: const Color(0xFFF5E6D3),
+                    child: Center(
+                      child: Text(
+                        'Delete All',
+                        style: WesternTextStyles.button(
+                          fontSize: 16,
+                          color: const Color(0xFFF5E6D3),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ], // Column children
-          ), // Column
-        ), // Padding
-      ), // Container
-    ), // Dialog
+                const SizedBox(height: 16),
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(vertical: 18),
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: AssetImage(
+                          'assets/images/utilities/buttons.png',
+                        ),
+                        fit: BoxFit.fill,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 6,
+                          spreadRadius: 1,
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Cancel',
+                        style: WesternTextStyles.button(
+                          fontSize: 16,
+                          color: const Color(0xFFF5E6D3),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ], // Column children
+            ), // Column
+          ), // Padding
+        ), // Container
+      ), // Dialog
     ); // showDialog
   }
 
@@ -188,17 +197,15 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     // Reset game state
     final gameNotifier = ref.read(gameStateProvider.notifier);
     gameNotifier.resetGame();
-    
+
     // Clear saved games (both manual and auto saves)
     await GameSaveService.instance.deleteSave(deleteAutoSave: false);
     await GameSaveService.instance.deleteSave(deleteAutoSave: true);
-    
+
     // Navigate to prologue
     if (mounted) {
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(
-          builder: (context) => const PrologueScreen(),
-        ),
+        MaterialPageRoute(builder: (context) => const PrologueScreen()),
         (route) => false, // Remove all previous routes
       );
     }
@@ -232,7 +239,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               children: [
                 // Header
                 _buildHeader(),
-                
+
                 // Settings content
                 Expanded(
                   child: SingleChildScrollView(
@@ -258,7 +265,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                                     color: const Color(0xFF6B4E3D),
                                   ),
                                   filled: true,
-                                  fillColor: const Color(0xFFF5E6D3).withOpacity(0.5),
+                                  fillColor: const Color(
+                                    0xFFF5E6D3,
+                                  ).withOpacity(0.5),
                                   contentPadding: const EdgeInsets.symmetric(
                                     horizontal: 16,
                                     vertical: 16,
@@ -291,24 +300,22 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                             ],
                           ),
                         ),
-                        
+
                         const SizedBox(height: 24),
-                        
+
                         // Audio Settings Section
                         _buildSection(
                           title: 'Audio Settings',
                           child: Column(
                             children: [
-                              _buildAudioToggle(
-                                '🎵 Music',
-                                _musicEnabled,
-                                (value) {
-                                  setState(() {
-                                    _musicEnabled = value;
-                                  });
-                                  AudioService.instance.setMusicEnabled(value);
-                                },
-                              ),
+                              _buildAudioToggle('🎵 Music', _musicEnabled, (
+                                value,
+                              ) {
+                                setState(() {
+                                  _musicEnabled = value;
+                                });
+                                AudioService.instance.setMusicEnabled(value);
+                              }),
                               const SizedBox(height: 16),
                               _buildAudioToggle(
                                 '🔊 Sound Effects',
@@ -323,9 +330,42 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                             ],
                           ),
                         ),
-                        
+
                         const SizedBox(height: 24),
-                        
+
+                        // Notifications Section
+                        _buildSection(
+                          title: 'Notifications',
+                          child: Column(
+                            children: [
+                              _buildAudioToggle(
+                                '🔔 Push Notifications',
+                                _notificationsEnabled,
+                                (value) async {
+                                  if (value) {
+                                    // Включение - запрашиваем разрешение и ждем результата
+                                    final result = await OneSignal
+                                        .Notifications.requestPermission(true);
+
+                                    if (mounted) {
+                                      setState(() {
+                                        _notificationsEnabled = result;
+                                      });
+                                    }
+                                  } else {
+                                    // Выключение - сразу обновляем UI и отключаем
+                                    setState(() {
+                                      _notificationsEnabled = false;
+                                    });
+                                  }
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        const SizedBox(height: 24),
+
                         // Legal Section
                         _buildSection(
                           title: 'Legal',
@@ -333,19 +373,25 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                             children: [
                               _buildButton(
                                 'Privacy Policy',
-                                () => _openWebView('Privacy Policy', 'https://casinoclashsaga.com/privacy/'),
+                                () => _openWebView(
+                                  'Privacy Policy',
+                                  'https://casinoclashsaga.com/privacy/',
+                                ),
                               ),
                               const SizedBox(height: 12),
                               _buildButton(
                                 'Terms & Conditions',
-                                () => _openWebView('Terms & Conditions', 'https://casinoclashsaga.com/terms/'),
+                                () => _openWebView(
+                                  'Terms & Conditions',
+                                  'https://casinoclashsaga.com/terms/',
+                                ),
                               ),
                             ],
                           ),
                         ),
-                        
+
                         const SizedBox(height: 24),
-                        
+
                         // Danger Zone Section
                         _buildSection(
                           title: 'Danger Zone',
@@ -359,9 +405,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                             ],
                           ),
                         ),
-                        
+
                         const SizedBox(height: 50),
-                        
+
                         // Back button
                         _buildButton(
                           'Back to Map',
@@ -400,11 +446,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(
-            Icons.settings,
-            color: Color(0xFFF5E6D3),
-            size: 32,
-          ),
+          const Icon(Icons.settings, color: Color(0xFFF5E6D3), size: 32),
           const SizedBox(width: 12),
           Text(
             'SETTINGS',
@@ -458,13 +500,17 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: WesternTextStyles.dialogue(
-            fontSize: 20,
-            color: const Color(0xFF1A0F08),
+        Flexible(
+          child: Text(
+            title,
+            style: WesternTextStyles.dialogue(
+              fontSize: 20,
+              color: const Color(0xFF1A0F08),
+            ),
+            overflow: TextOverflow.ellipsis,
           ),
         ),
+        const SizedBox(width: 12),
         GestureDetector(
           onTap: () => onChanged(!value),
           child: Container(
@@ -496,7 +542,12 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     );
   }
 
-  Widget _buildButton(String text, VoidCallback onTap, {bool isPrimary = false, bool isDestructive = false}) {
+  Widget _buildButton(
+    String text,
+    VoidCallback onTap, {
+    bool isPrimary = false,
+    bool isDestructive = false,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -554,9 +605,7 @@ class _WebViewScreenState extends State<_WebViewScreen> {
       body: Stack(
         children: [
           InAppWebView(
-            initialUrlRequest: URLRequest(
-              url: WebUri(widget.url),
-            ),
+            initialUrlRequest: URLRequest(url: WebUri(widget.url)),
             onProgressChanged: (controller, progress) {
               setState(() {
                 _progress = progress / 100;
@@ -567,7 +616,9 @@ class _WebViewScreenState extends State<_WebViewScreen> {
             LinearProgressIndicator(
               value: _progress,
               backgroundColor: Colors.grey.shade300,
-              valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF8B6F47)),
+              valueColor: const AlwaysStoppedAnimation<Color>(
+                Color(0xFF8B6F47),
+              ),
             ),
         ],
       ),
